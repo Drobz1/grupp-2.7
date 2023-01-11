@@ -9,6 +9,11 @@ public class ShopScript : MonoBehaviour
 
     public int level2tubes;
     public Button tubebutton;
+    public int tubeprice = 200;
+
+    public int level2flippers;
+    public Button flippersbutton;
+    public int flippersprice = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +29,16 @@ public class ShopScript : MonoBehaviour
 
     public void buyTubes()
     {
-        Player.money -= 200;
+        Player.money -= tubeprice;
         Player.filledTube = level2tubes;
         print("Bought level 2 tubes");
         tubebutton.gameObject.SetActive(false);
-        
-        
+    }
+    public void buyFlippers()
+    {
+        Player.money -= flippersprice;
+        Player.speed = level2flippers;
+        print("Bought level 2 flippers");
+        flippersbutton.gameObject.SetActive(false);
     }
 }

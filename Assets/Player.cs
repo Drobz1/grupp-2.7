@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public float speed = 2;
     public int money;
 
     public float filledTube = 15;
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(filledTube);
+        print("filled tube is" + filledTube);
+        print("speed is " + speed);
     }
 }
