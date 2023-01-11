@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+
+
     public float speed = 2;
     public int money;
 
@@ -13,9 +16,11 @@ public class Player : MonoBehaviour
     public float tubeRemaining;
     public bool isFilled;
 
+
     // Start is called before the first frame update
     void Start()
     {
+        
         maxTube = 15;
         speed = 2;
         tubeRemaining = maxTube;
@@ -40,7 +45,14 @@ public class Player : MonoBehaviour
             die();
         }
 
-
+        if(Input.GetKeyDown(KeyCode.O))
+        {
+            inWater = true;
+        }
+        if(Input.GetKeyUp(KeyCode.O))
+        {
+            inWater = false;
+        }
 
         print("filled tube is" + maxTube);
         print("speed is " + speed);

@@ -30,7 +30,7 @@ public class ShopScript : MonoBehaviour
     public void buyTubes()
     {
         Player.money -= tubeprice;
-        Player.filledTube = level2tubes;
+        Player.maxTube = level2tubes;
         print("Bought level 2 tubes");
         tubebutton.gameObject.SetActive(false);
     }
