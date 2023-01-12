@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-
+    public bool dead = false;
 
     public float speed = 2;
     public int money;
@@ -19,14 +19,19 @@ public class Player : MonoBehaviour
     public bool isFilled;
     public float refillValue = 1;
 
-
+    public bool deathscreenspawned = false;
+    DeathScreen DeathScreen;
+    public GameObject deathscreenprefab;
     // Start is called before the first frame update
     void Start()
     {
-        
+        DeathScreen = FindObjectOfType<DeathScreen>();
         maxTube = 15;
         speed = 2;
         tubeRemaining = maxTube;
+        dead = false;
+
+
 
     }
 
@@ -53,7 +58,15 @@ public class Player : MonoBehaviour
 
         if(tubeRemaining <= 0)
         {
-            die();
+            if(!deathscreenspawned)
+            {
+                Instantiate(deathscreenprefab, new Vector3(0, 0, 0), Quaternion.identity);
+                deathscreenspawned = true;
+            }
+            
+
+
+
         }
 
         if(Input.GetKeyDown(KeyCode.O))
@@ -67,11 +80,5 @@ public class Player : MonoBehaviour
 
         print("filled tube is" + maxTube);
         print("speed is " + speed);
-    }
-
-    public void die()
-    {
-        print("you died.");
-        SceneManager.LoadScene("DeathScreen", LoadSceneMode.Single);
     }
 }
