@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -11,10 +12,12 @@ public class Player : MonoBehaviour
     public int money;
 
     //TUBE
+    public bool tubeEquipped;
     public bool inWater;
     public float maxTube = 15;
     public float tubeRemaining;
     public bool isFilled;
+    public float refillValue = 1;
 
 
     // Start is called before the first frame update
@@ -32,11 +35,19 @@ public class Player : MonoBehaviour
     {
         if (inWater)
         {
-            tubeRemaining -= 1 * Time.deltaTime;
+            if(tubeEquipped)
+            {
+                tubeRemaining -= 1 * Time.deltaTime;
+            }
+            else if (!tubeEquipped)
+            {
+                tubeRemaining -= 3 * Time.deltaTime;
+            }
         }
+
         else if (!inWater && tubeRemaining != maxTube && tubeRemaining <= maxTube)
         {
-            tubeRemaining += 1 * Time.deltaTime;
+            tubeRemaining += refillValue * Time.deltaTime;
         }
 
 
@@ -61,5 +72,6 @@ public class Player : MonoBehaviour
     public void die()
     {
         print("you died.");
+        SceneManager.LoadScene("DeathScreen", LoadSceneMode.Single);
     }
 }

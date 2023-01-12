@@ -15,6 +15,10 @@ public class ShopScript : MonoBehaviour
     public Button flippersbutton;
     public int flippersprice = 100;
 
+    public int level2refill;
+    public Button refillButton;
+    public int refillPrice = 200;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,5 +44,13 @@ public class ShopScript : MonoBehaviour
         Player.speed = level2flippers;
         print("Bought level 2 flippers");
         flippersbutton.gameObject.SetActive(false);
+    }
+
+    public void buyFasterRefill()
+    {
+        Player.money -= refillPrice;
+        Player.refillValue = 2;
+        print("Bought level 2 refill");
+        refillButton.gameObject.SetActive(false);
     }
 }
