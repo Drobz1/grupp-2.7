@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         speed = 2;
         tubeRemaining = maxTube;
         dead = false;
-
+        money = 1000;
 
 
     }
