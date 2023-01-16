@@ -7,17 +7,11 @@ public class PinaColada : Shop
     public GameObject NotEnoughMoney;
     Player Player;
 
-    int zoom = 100;
-    public GameObject Camera;
-
-    public Camera m_OrthographicCamera;
-    float m_ViewPositionX, m_ViewPositionY, m_ViewWidth, m_ViewHeight;
 
     public bool boughtPinaColada = false;
     // Start is called before the first frame update
     void Start()
     {
-        m_OrthographicCamera.orthographicSize = 10.0f;
         itemPrice = 100;
         raisePrice = 3000;
         Player = FindObjectOfType<Player>();
