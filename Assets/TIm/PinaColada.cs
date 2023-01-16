@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PinaColada : Shop
-{ 
+{
+    public Text priceTag;
+
+
     public GameObject NotEnoughMoney;
     Player Player;
 
@@ -26,7 +30,7 @@ public class PinaColada : Shop
     // Update is called once per frame
     void Update()
     {
-
+        priceTag.text = "Price: $" + itemPrice;
     }
     public virtual void clickItem()
     {

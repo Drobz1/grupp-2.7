@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Flippers : Shop
 {
     public GameObject NotEnoughMoney;
     Player Player;
+
+    public Text priceTag;
 
     public int speedGain = 2;
     // Start is called before the first frame update
@@ -24,7 +27,7 @@ public class Flippers : Shop
     // Update is called once per frame
     void Update()
     {
-        
+        priceTag.text = "Price: $" + itemPrice;
     }
     public virtual void clickItem()
     {

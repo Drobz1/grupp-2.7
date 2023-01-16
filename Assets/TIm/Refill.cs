@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Refill : Shop
 {
     public GameObject NotEnoughMoney;
     Player Player;
 
-    
+    public Text priceTag;
+
     public int refillValue = 2;
     // Start is called before the first frame update
     void Start()
@@ -25,7 +27,7 @@ public class Refill : Shop
     // Update is called once per frame
     void Update()
     {
-
+        priceTag.text = "Price: $" + itemPrice;
     }
     public virtual void clickItem()
     {

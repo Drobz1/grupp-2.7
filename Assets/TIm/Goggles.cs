@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Goggles : Shop
 {
+
+    public Text priceTag;
 
     public Camera m_OrthographicCamera;
     public float zoomValue = 3f;
@@ -28,7 +31,7 @@ public class Goggles : Shop
     // Update is called once per frame
     void Update()
     {
-        m_OrthographicCamera.orthographicSize = zoomValue;
+        priceTag.text = "Price: $" + itemPrice;
     }
     public virtual void clickItem()
     {
