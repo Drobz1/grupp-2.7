@@ -7,50 +7,55 @@ public class ShopScript : MonoBehaviour
 
     Player Player;
 
-    public int level2tubes;
+    public int upgradeTubes = 2;
     public Button tubebutton;
     public int tubeprice = 200;
 
-    public int level2flippers;
+    public int upgradeFlippers = 2;
     public Button flippersbutton;
-    public int flippersprice = 100;
+    public int flippersPrice = 100;
 
-    public int level2refill;
+    public int upgradeRefill = 2;
     public Button refillButton;
-    public int refillPrice = 200;
+    public int refillPrice = 1000;
+
+    //NOTIFICATION
+    private Text notificationText;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        notificationText = GetComponent<Text>();
         Player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        notificationText.text = "tja";
     }
 
     public void buyTubes()
     {
+        print("bought tubes");
         Player.money -= tubeprice;
-        Player.maxTube = level2tubes;
-        print("Bought level 2 tubes");
-        tubebutton.gameObject.SetActive(false);
+        tubeprice += 200;
+        Player.maxTube += 5;
+
     }
     public void buyFlippers()
     {
-        Player.money -= flippersprice;
-        Player.speed = level2flippers;
-        print("Bought level 2 flippers");
-        flippersbutton.gameObject.SetActive(false);
+        Player.money -= flippersPrice;
+        flippersPrice += 100;
+        Player.speed += upgradeFlippers;
+
     }
 
     public void buyFasterRefill()
     {
         Player.money -= refillPrice;
         Player.refillValue = 2;
-        print("Bought level 2 refill");
         refillButton.gameObject.SetActive(false);
     }
 }
