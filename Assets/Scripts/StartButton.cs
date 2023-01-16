@@ -19,6 +19,6 @@ public class StartButton : MonoBehaviour
 
     public void ButtonStart()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("LoreScreen");
     }
 }
