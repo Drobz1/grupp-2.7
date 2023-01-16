@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041a05091b5fa11438292259f3bfb343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 1000716211}
   movespeed: 80
   reversespeed: -80
   swimUp: 80
@@ -572,7 +572,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -642,7 +642,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 748ae8b33df036b46a86e0387f1602cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cfe99a1afb609b4488d6fc9224a62f74, type: 3}
   m_Color: {r: 0.5943396, g: 0.32333565, b: 0.39310256, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -681,13 +681,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1000716211}
-  movespeed: 80
-  reversespeed: -80
-  swimUp: 80
-  swimDown: -80
+  movespeed: 150
+  reversespeed: -150
+  swimUp: 150
+  swimDown: -150
+  dead: 0
   speed: 2
   money: 0
-  filledTube: 15
+  tubeEquipped: 0
+  inWater: 0
+  maxTube: 15
+  tubeRemaining: 0
+  isFilled: 0
+  refillValue: 1
+  deathscreenspawned: 0
+  deathscreenprefab: {fileID: 0}
 --- !u!1 &1049137215
 GameObject:
   m_ObjectHideFlags: 0
