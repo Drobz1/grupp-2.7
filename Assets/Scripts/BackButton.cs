@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,5 +22,3 @@ public class BackButton : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 }
-=======
->>>>>>> Stashed changes
