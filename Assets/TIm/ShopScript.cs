@@ -6,6 +6,7 @@ public class ShopScript : MonoBehaviour
 {
 
     Player Player;
+    public GameObject NotEnoughMoney;
 
     public int upgradeTubes = 2;
     public Button tubebutton;
@@ -33,29 +34,65 @@ public class ShopScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        notificationText.text = "tja";
+        //notificationText.text = "tja";
     }
-
     public void buyTubes()
     {
-        print("bought tubes");
-        Player.money -= tubeprice;
-        tubeprice += 200;
-        Player.maxTube += 5;
+        if(Player.money >= tubeprice)
+        {
+            print("bought tubes");
+            Player.money -= tubeprice;
+            tubeprice += 200;
+            Player.maxTube += 5;
+            if (!Player.tubeEquipped)
+            {
+                Player.tubeEquipped = true;
+            }
+        }
+        else
+        {
+            Instantiate(NotEnoughMoney, transform.position, Quaternion.identity);
+
+        }
+
+
 
     }
     public void buyFlippers()
     {
-        Player.money -= flippersPrice;
-        flippersPrice += 100;
-        Player.speed += upgradeFlippers;
-
+        if (Player.money >= flippersPrice)
+        {
+            Player.money -= flippersPrice;
+            flippersPrice += 100;
+            Player.speed += upgradeFlippers;
+        }
+        else
+        {
+            Instantiate(NotEnoughMoney, transform.position, Quaternion.identity);
+        }
     }
 
     public void buyFasterRefill()
     {
-        Player.money -= refillPrice;
-        Player.refillValue = 2;
-        refillButton.gameObject.SetActive(false);
+        if(Player.money >= refillPrice)
+        {
+            Player.money -= refillPrice;
+            Player.refillValue = 2;
+            refillButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            Instantiate(NotEnoughMoney, transform.position, Quaternion.identity);
+        }
+    }
+    IEnumerator ExampleCoroutine()
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(0.2f);
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 }
