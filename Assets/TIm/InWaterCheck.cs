@@ -7,10 +7,12 @@ public class InWaterCheck : MonoBehaviour
     //Niljas fixade gravity
     public Rigidbody2D rb;
 
+    PlasticScore PlasticScore;
     Player Player;
     // Start is called before the first frame update
     void Start()
     {
+        PlasticScore = FindObjectOfType<PlasticScore>();
         Player = FindObjectOfType<Player>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -21,6 +23,10 @@ public class InWaterCheck : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        PlasticScore.score = 0;
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "water")
