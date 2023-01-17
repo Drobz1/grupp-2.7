@@ -7,8 +7,11 @@ public class InWaterCheck : MonoBehaviour
     //Niljas fixade gravity
     public Rigidbody2D rb;
 
+    private int plasticValue = 50;
+
     PlasticScore PlasticScore;
     Player Player;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,11 +31,12 @@ public class InWaterCheck : MonoBehaviour
         if(collision.gameObject.tag == "båt")
         {
 
-            for (int i = 0; i <= PlasticScore.score; i = i++)
+            for (int i = 0; i <= PlasticScore.score; i++)
             {
-                print("hej");
+                Player.money += plasticValue;
             }
             PlasticScore.score = 0;
+            Player.money -= plasticValue;
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

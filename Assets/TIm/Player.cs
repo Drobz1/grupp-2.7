@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro; 
 
 public class Player : MonoBehaviour
 {
@@ -45,21 +46,21 @@ public class Player : MonoBehaviour
     public float refillValue = 1;
 
     public bool deathscreenspawned = false;
-    DeathScreen DeathScreen;
+    PlasticScore PlasticScore;
     public GameObject deathscreenprefab;
 
-    public Camera cam;
-    float m_FieldOfView;
+    public TMP_Text balanceText;
+
 
     // Start is called before the first frame update
     void Start()
     {
 
-        m_FieldOfView = 120f;
+
         rb = GetComponent<Rigidbody2D>();
         //Ovanför är movement
 
-        DeathScreen = FindObjectOfType<DeathScreen>();
+        PlasticScore = FindObjectOfType<PlasticScore>();
         maxTube = 15;
         speed = 2;
         tubeRemaining = maxTube;
@@ -70,7 +71,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Camera.main.fieldOfView = m_FieldOfView;
+        balanceText.text = "" + money;
 
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -136,6 +137,7 @@ public class Player : MonoBehaviour
 
         if(tubeRemaining <= 0)
         {
+            PlasticScore.score = 0;
             if(!deathscreenspawned)
             {
                 Instantiate(deathscreenprefab, new Vector3(0, 0, 0), Quaternion.identity);
