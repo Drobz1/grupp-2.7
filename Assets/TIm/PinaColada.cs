@@ -17,14 +17,14 @@ public class PinaColada : Shop
     void Start()
     {
         itemPrice = 100;
-        raisePrice = 3000;
+        raisePrice = 99899;
         Player = FindObjectOfType<Player>();
     }
     public override void buyItem()
     {
         Player.money -= itemPrice;
         boughtPinaColada = true;
-        transform.position = new Vector3(1000, 1000, 1000);
+        itemPrice += raisePrice;
         
     }
     // Update is called once per frame
