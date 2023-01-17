@@ -6,31 +6,17 @@ public class ItemPickup : MonoBehaviour
 {
    
     private PlasticScore scoreManager;
-    Player Player;
 
     private void Start()
     {
-        Player = FindObjectOfType<Player>();
-        scoreManager = GameObject.Find("Canvas").GetComponent<PlasticScore>(); // Hittar "Canvas" i hierarchy genom Gameobject.Find. Tar också Skripten "PlasticScore" 
+        scoreManager = GameObject.Find("Canvas").GetComponent<PlasticScore>(); // Hittar "Canvas" i hierarchy genom Gameobject.Find. Tar också "PlasticScore" som ligger i canvas för att veta vilken text som ska uppdateras. -Ludvig
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player") //när saker med denna skript kolliderar med någon med tag "Player" så ger den 1 poäng och förstör objektet. -Ludvig
         {
             scoreManager.score += 1f; 
             Destroy(gameObject);
-        }
-    }
-
-    private void Update()
-    {
-        if (Player.inWater == false)
-        {
-            scoreManager.score = 0;
-            for (int i = 0; i < scoreManager.score; i++)
-            {
-                Player.money += 50;
-            }
         }
     }
 }
