@@ -18,15 +18,21 @@ EditorBuildSettings:
     path: Assets/Scenes/GameScene.unity
     guid: fa2738c4bb13a2c4089a92d5b3eb3f49
   - enabled: 1
+    path: Assets/Scenes/LoadingSceneRight.unity
+    guid: 592a9454ea000ad49945adbeadd9d104
+  - enabled: 1
+    path: Assets/Scenes/PellesPalmer.unity
+    guid: 4fbb6a47a9555dc408b43c473f5cf539
+  - enabled: 1
     path: Assets/Scenes/CreditsScene.unity
     guid: ab6799f45ba9fc14197a50e3a6f7a7ea
+  - enabled: 1
+    path: Assets/Scenes/DeathScreen.unity
+    guid: f33f47367cc583540913c1642245c65d
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Tims scen.unity
     guid: e5883933c408cb14ba7e4174765f6d16
-  - enabled: 1
-    path: Assets/Scenes/DeathScreen.unity
-    guid: f33f47367cc583540913c1642245c65d
   m_configObjects: {}
