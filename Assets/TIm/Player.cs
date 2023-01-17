@@ -47,9 +47,15 @@ public class Player : MonoBehaviour
     public bool deathscreenspawned = false;
     DeathScreen DeathScreen;
     public GameObject deathscreenprefab;
+
+    public Camera cam;
+    float m_FieldOfView;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        m_FieldOfView = 120f;
         rb = GetComponent<Rigidbody2D>();
         //Ovanför är movement
 
@@ -64,6 +70,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Camera.main.fieldOfView = m_FieldOfView;
+
         if (Input.GetKeyDown(KeyCode.D))
         {
             buttonpressed = Right;

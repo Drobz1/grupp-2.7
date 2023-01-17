@@ -8,8 +8,7 @@ public class Goggles : Shop
 
     public Text priceTag;
 
-    public Camera m_OrthographicCamera;
-    public float zoomValue = 3f;
+
 
     public GameObject NotEnoughMoney;
     Player Player;
