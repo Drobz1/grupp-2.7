@@ -11,7 +11,7 @@ public class InWaterCheck : MonoBehaviour
 
     PlasticScore PlasticScore;
     Player Player;
-    
+    public bool canExit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +30,7 @@ public class InWaterCheck : MonoBehaviour
     {
         if(collision.gameObject.tag == "båt")
         {
-
+            canExit = true;
             for (int i = 0; i <= PlasticScore.score; i++)
             {
                 Player.money += plasticValue;
@@ -41,6 +41,14 @@ public class InWaterCheck : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if(collision.gameObject.tag == "enterboat")
+        {
+            
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                print("entered the boat");
+            }
+        }
         if (collision.gameObject.tag == "water")
         {
             Player.inWater = true;
