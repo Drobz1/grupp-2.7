@@ -25,7 +25,15 @@ public class InWaterCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlasticScore.score = 0;
+        if(collision.gameObject.tag == "båt")
+        {
+
+            for (int i = 0; i <= PlasticScore.score; i = i++)
+            {
+                print("hej");
+            }
+            PlasticScore.score = 0;
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
