@@ -3091,7 +3091,7 @@ MonoBehaviour:
   maxTube: 15
   tubeRemaining: 999999
   isFilled: 0
-  refillValue: 1
+  refillValue: 2
   deathscreenspawned: 0
   deathscreenprefab: {fileID: 756119148648178391, guid: a85e207bff1c1b844b585c88abef7537, type: 3}
   balanceText: {fileID: 1213792694}
@@ -3221,7 +3221,7 @@ Transform:
   m_GameObject: {fileID: 1472882121}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.8, y: 5.8, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 2073268992}
   - {fileID: 1077185160}
@@ -4462,7 +4462,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073268991}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -1.6666667}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 1}
   m_Children: []
   m_Father: {fileID: 1472882127}
@@ -4679,7 +4679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fea680939f580de40b618aadd156623b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 1472882125}
   canExit: 0
 --- !u!61 &2125612069
 BoxCollider2D:

@@ -24,7 +24,10 @@ public class InWaterCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Player.rb.constraints = RigidbodyConstraints2D.None;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,6 +59,7 @@ public class InWaterCheck : MonoBehaviour
         }
         if (collision.gameObject.tag == "water")
         {
+
             Player.inWater = true;
             Player.rb.gravityScale = 0f;
             Player.movespeed = 80f;
@@ -73,6 +77,7 @@ public class InWaterCheck : MonoBehaviour
     {
         if(collision.gameObject.tag == "water")
         {
+            Player.rb.constraints = RigidbodyConstraints2D.FreezePositionY;
             Player.inWater = false;
             Player.rb.gravityScale = 1f;
             Player.movespeed = 0f;
