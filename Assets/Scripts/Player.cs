@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
 
     public bool deathscreenspawned = false;
     PlasticScore PlasticScore;
+    JeweleryScore JeweleryScore;
     public GameObject deathscreenprefab;
     float deathTimer = 99999999;
 
@@ -72,6 +73,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //Ovanför är movement
 
+        JeweleryScore = FindObjectOfType<JeweleryScore>();
         PlasticScore = FindObjectOfType<PlasticScore>();
         maxTube = 15;
         speed = 2;
@@ -157,6 +159,7 @@ public class Player : MonoBehaviour
         if(tubeRemaining <= 0)
         {
             PlasticScore.score = 0;
+            JeweleryScore.score = 0;
             if(!deathscreenspawned)
             {
                 Instantiate(deathscreenprefab, new Vector3(0, 0, 0), Quaternion.identity);
