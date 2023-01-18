@@ -16,10 +16,10 @@ public class PlayerMovementReal : MonoBehaviour
     public Rigidbody2D rb;
 
     //Floats för movement hastighet 
-    public float movespeed = 5;
-    public float reversespeed = -5;
-    public float swimUp = 5;
-    public float swimDown = -5;
+    private float movespeed = 5;
+    private float reversespeed = -5;
+    private float swimUp = 5;
+    private float swimDown = -5;
     //Floats för movement hastighet
 
     public const string Right = "right";

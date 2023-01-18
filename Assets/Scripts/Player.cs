@@ -16,10 +16,10 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
 
     //Floats för movement hastighet 
-    public float movespeed = 80;
-    public float reversespeed = -80;
-    public float swimUp = 80;
-    public float swimDown = -80;
+    public float movespeed = 40;
+    public float reversespeed = -40;
+    public float swimUp = 40;
+    public float swimDown = -40;
     //Floats för movement hastighet
 
     public const string Right = "right";
