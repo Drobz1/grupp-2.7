@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
     public bool deathscreenspawned = false;
     PlasticScore PlasticScore;
     public GameObject deathscreenprefab;
+    float deathTimer = 99999999;
 
 
     public TMP_Text balanceText;
@@ -146,7 +147,13 @@ public class Player : MonoBehaviour
             tubeRemaining += refillValue * Time.deltaTime;
         }
 
+    
+       deathTimer -= 1 * Time.deltaTime;
 
+        if (deathTimer <= 0)
+        {
+            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        }
         if(tubeRemaining <= 0)
         {
             PlasticScore.score = 0;
@@ -154,6 +161,7 @@ public class Player : MonoBehaviour
             {
                 Instantiate(deathscreenprefab, new Vector3(0, 0, 0), Quaternion.identity);
                 deathscreenspawned = true;
+                deathTimer = 5;
             }
             
 
@@ -214,6 +222,7 @@ public class Player : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+    
 
     /*void RaknaUtRiktning() //Räknar ut vilket håll den åker mot
     {

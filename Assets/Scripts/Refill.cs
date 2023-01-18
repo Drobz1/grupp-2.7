@@ -9,7 +9,7 @@ public class Refill : Shop
     Player Player;
 
     public Text priceTag;
-    public int refillLevel = 0;
+    public static int refillLevel = 0;
     public int refillValue = 2;
     // Start is called before the first frame update
     void Start()
