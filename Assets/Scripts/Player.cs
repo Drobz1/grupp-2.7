@@ -211,6 +211,11 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
     }
 
+    public void leavePellesPalmer()
+    {
+        SceneManager.LoadScene("LoadingSceneRight", LoadSceneMode.Single);
+    }
+
 
     private void Flip()
     {
