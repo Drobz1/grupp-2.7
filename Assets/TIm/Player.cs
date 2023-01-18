@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     public bool dead = false;
 
     public float speed = 2;
-    public int money;
+    public static int money;
 
     //TUBE
     public bool tubeEquipped;
@@ -51,7 +51,6 @@ public class Player : MonoBehaviour
 
     public TMP_Text balanceText;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -65,8 +64,8 @@ public class Player : MonoBehaviour
         speed = 2;
         tubeRemaining = maxTube;
         dead = false;
-        money = 1000;
     }
+
 
     // Update is called once per frame
     void Update()
