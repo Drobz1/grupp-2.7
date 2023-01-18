@@ -49,12 +49,24 @@ public class Player : MonoBehaviour
     PlasticScore PlasticScore;
     public GameObject deathscreenprefab;
 
+
     public TMP_Text balanceText;
+    public TMP_Text stats;
+    public Canvas pauseMenu;
+    bool pauseMenuActive;
+
+    Tubes Tubes;
+    Flippers Flippers;
+    Goggles Goggles;
+    Refill Refill;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        Tubes = FindObjectOfType<Tubes>();
+        Flippers = FindObjectOfType<Flippers>();
+        Goggles = FindObjectOfType<Goggles>();
+        Refill = FindObjectOfType<Refill>();
 
         rb = GetComponent<Rigidbody2D>();
         //Ovanför är movement
@@ -71,7 +83,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         balanceText.text = "" + money;
-
+        stats.text = "Tube Level: " + Tubes.tubeLevel + "            " + "TubeRefill Level: " + Refill.refillLevel + "          " + "Flippers Level: " + Flippers.flippersLevel + "         " + "Goggles Level: " + Goggles.goggleLevel;
+             
         if (Input.GetKeyDown(KeyCode.D))
         {
             buttonpressed = Right;
@@ -159,7 +172,37 @@ public class Player : MonoBehaviour
 
         print("filled tube is" + maxTube);
         print("speed is " + speed);
+
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!pauseMenuActive)
+            {
+                pauseMenu.gameObject.SetActive(true);
+                Time.timeScale = 0;
+                pauseMenuActive = true;
+            }
+            else if (pauseMenuActive == true)
+            {
+                pauseMenu.gameObject.SetActive(false);
+                Time.timeScale = 1;
+                pauseMenuActive = false;
+            }
+        }
     }
+
+    public void ContinueGame()
+    {
+        pauseMenu.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void QuitGame()
+    {
+        pauseMenu.gameObject.SetActive(false);
+        SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
+    }
+
 
     private void Flip()
     {

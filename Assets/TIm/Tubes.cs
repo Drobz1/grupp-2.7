@@ -10,10 +10,12 @@ public class Tubes : Shop
 
     public Text priceTag;
 
+    public static int tubeLevel = 0;
     // Start is called before the first frame update
     void Start()
     {
-        itemPrice = 200;
+           tubeLevel = 0;
+    itemPrice = 200;
         raisePrice = 200;
         Player = FindObjectOfType<Player>();
     }
@@ -22,6 +24,7 @@ public class Tubes : Shop
         Player.money -= itemPrice;
         itemPrice += raisePrice;
         Player.maxTube += 5;
+        tubeLevel += 1;
     }
     // Update is called once per frame
     void Update()

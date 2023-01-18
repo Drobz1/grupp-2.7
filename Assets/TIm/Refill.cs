@@ -9,7 +9,7 @@ public class Refill : Shop
     Player Player;
 
     public Text priceTag;
-
+    public int refillLevel = 0;
     public int refillValue = 2;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,7 @@ public class Refill : Shop
         Player.money -= itemPrice;
         itemPrice += raisePrice;
         Player.refillValue = refillValue;
+        refillLevel += 1;
     }
     // Update is called once per frame
     void Update()

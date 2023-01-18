@@ -7,7 +7,7 @@ public class Goggles : Shop
 {
 
     public Text priceTag;
-
+    public static int goggleLevel = 0;
 
 
     public GameObject NotEnoughMoney;
@@ -15,6 +15,7 @@ public class Goggles : Shop
     // Start is called before the first frame update
     void Start()
     {
+        goggleLevel = 0;
         itemPrice = 100;
         raisePrice = 200;
         Player = FindObjectOfType<Player>();
@@ -24,6 +25,7 @@ public class Goggles : Shop
     {
         Player.money -= itemPrice;
         itemPrice += raisePrice;
+        goggleLevel += 1;
         //Player.zoomValue += 1.5f;
 
     }
