@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InWaterCheck : MonoBehaviour
 {
@@ -30,13 +31,16 @@ public class InWaterCheck : MonoBehaviour
     {
         if(collision.gameObject.tag == "båt")
         {
-            canExit = true;
-            for (int i = 0; i <= PlasticScore.score; i++)
+            if (!Player.deathscreenspawned)
             {
-                Player.money += plasticValue;
+                canExit = true;
+                for (int i = 0; i <= PlasticScore.score; i++)
+                {
+                    Player.money += plasticValue;
+                }
+                PlasticScore.score = 0;
+                Player.money -= plasticValue;
             }
-            PlasticScore.score = 0;
-            Player.money -= plasticValue;
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -47,6 +51,7 @@ public class InWaterCheck : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E))
             {
                 print("entered the boat");
+                SceneManager.LoadScene("Tims scen", LoadSceneMode.Single);
             }
         }
         if (collision.gameObject.tag == "water")

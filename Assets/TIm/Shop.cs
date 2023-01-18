@@ -22,7 +22,7 @@ public class Shop : MonoBehaviour
 
     void Update()
     {
-        balanceText.text = "Balance: $" + Player.money;
+        balanceText.text = "Balance: " + Player.money;
     }
    
     public virtual void buyItem()
