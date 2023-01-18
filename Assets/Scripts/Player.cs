@@ -38,12 +38,12 @@ public class Player : MonoBehaviour
     public static int money;
 
     //TUBE
-    public bool tubeEquipped;
-    public bool inWater;
-    public float maxTube = 15;
-    public float tubeRemaining;
+    public static bool tubeEquipped;
+    public static bool inWater;
+    public static float maxTube = 15;
+    public static float tubeRemaining;
     public bool isFilled;
-    public float refillValue = 1;
+    public static float refillValue = 1;
 
     public bool deathscreenspawned = false;
     PlasticScore PlasticScore;

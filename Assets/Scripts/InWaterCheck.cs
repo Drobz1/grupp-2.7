@@ -53,8 +53,12 @@ public class InWaterCheck : MonoBehaviour
             
             if(Input.GetKeyDown(KeyCode.E))
             {
-                print("entered the boat");
-                SceneManager.LoadScene("Tims scen", LoadSceneMode.Single);
+                if(Player.deathscreenspawned == false)
+                {
+                    print("entered the boat");
+                    SceneManager.LoadScene("Tims scen", LoadSceneMode.Single);
+                }
+
             }
         }
         if (collision.gameObject.tag == "water")

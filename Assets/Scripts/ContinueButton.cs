@@ -19,6 +19,6 @@ public class ContinueButton : MonoBehaviour
 
     public void ButtonStart()
     {
-        SceneManager.LoadScene("LoadingSceneLeft");
+        SceneManager.LoadScene("LoadingSceneRight");
     }
 }
