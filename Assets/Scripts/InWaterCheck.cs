@@ -9,16 +9,13 @@ public class InWaterCheck : MonoBehaviour
     public Rigidbody2D rb;
 
     private int plasticValue = 50;
-    private int jeweleryValue = 100;
 
     PlasticScore PlasticScore;
-    JeweleryScore JeweleryScore;
     Player Player;
     public bool canExit = false;
     // Start is called before the first frame update
     void Start()
     {
-        JeweleryScore = FindObjectOfType<JeweleryScore>();
         PlasticScore = FindObjectOfType<PlasticScore>();
         Player = FindObjectOfType<Player>();
         rb = GetComponent<Rigidbody2D>();
@@ -44,14 +41,8 @@ public class InWaterCheck : MonoBehaviour
                 {
                     Player.money += plasticValue;
                 }
-                for (int i = 0; i <= JeweleryScore.score; i++)
-                {
-                    Player.money += jeweleryValue;
-                }
                 PlasticScore.score = 0;
-                JeweleryScore.score = 0;
                 Player.money -= plasticValue;
-                Player.money -= jeweleryValue;
             }
         }
     }
