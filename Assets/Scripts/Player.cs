@@ -118,19 +118,19 @@ public class Player : MonoBehaviour
 
         if (buttonpressed == Right)
         {
-            rb.AddForce(new Vector2(movespeed, 0f));
+            rb.AddForce(new Vector2(movespeed *= speed, 0f));
         }
         else if (buttonpressed == Left)
         {
-            rb.AddForce(new Vector2(reversespeed, 0f));
+            rb.AddForce(new Vector2(reversespeed *= speed, 0f));
         }
         else if (buttonpressed == Down)
         {
-            rb.AddForce(new Vector2(0f, swimDown));
+            rb.AddForce(new Vector2(0f, swimDown *= speed));
         }
         else if (buttonpressed == Up)
         {
-            rb.AddForce(new Vector2(0, swimUp));
+            rb.AddForce(new Vector2(0, swimUp *= speed));
         }
 
         Flip();
