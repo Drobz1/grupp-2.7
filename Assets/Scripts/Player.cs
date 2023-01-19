@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
 
     public bool dead = false;
 
-    public float speed = 2;
+    public static float speed = 1;
     public static int money;
 
     //TUBE
@@ -69,27 +69,24 @@ public class Player : MonoBehaviour
     void Start()
     {
 
-
         rb = GetComponent<Rigidbody2D>();
         //Ovanför är movement
 
         PlasticScore = FindObjectOfType<PlasticScore>();
         JewleryScore = FindObjectOfType<JewleryScore>();
         maxTube = 15;
-        speed = 2;
+        
         tubeRemaining = maxTube;
         dead = false;
         
     }
 
-    void UpdateText()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
     {
+        speed = tubeLevel + 1;
+
         balanceText.text = "" + money;
         stats.text = "Tube Level: " + tubeLevel + "            " + "TubeRefill Level: " + refillLevel + "          " + "Flippers Level: " + flippersLevel + "         " + "Goggles Level: " + gogglesLevel;
 

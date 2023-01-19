@@ -13424,7 +13424,6 @@ MonoBehaviour:
   swimUp: 30
   swimDown: -30
   dead: 0
-  speed: 2
   isFilled: 0
   deathscreenspawned: 0
   deathscreenprefab: {fileID: 756119148648178391, guid: a85e207bff1c1b844b585c88abef7537, type: 3}
