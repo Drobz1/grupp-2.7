@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ItemSpawnManager : MonoBehaviour
 {
+    //HITTA ALLA PREFABS
     public GameObject trashPrefab;
     public GameObject canPrefab;
     public GameObject plasticPrefab;
@@ -13,6 +14,8 @@ public class ItemSpawnManager : MonoBehaviour
     public GameObject redNecklacePrefab;
     public GameObject greenNecklacePrefab;
 
+
+    //INTS SOM ANVÄNDS TILL SENARE
     int randomNumber;
     int randomNumber2;
 
@@ -40,22 +43,22 @@ public class ItemSpawnManager : MonoBehaviour
 
         spawnItems();
     }
-    void spawnItems()
+    void spawnItems() //funktion som spawnar items
     {
-        randomNumber = Random.Range(7, 13);
-        randomNumber2 = Random.Range(4, 8);
-        for (int i = 0; i < randomNumber; i++)
+        randomNumber = Random.Range(7, 13); //ge randomnumber ett random värde 
+        randomNumber2 = Random.Range(4, 8);  //ge randomnumber ett random värde 
+        for (int i = 0; i < randomNumber; i++) //för varje randomnumber
         {
-            Instantiate(trashPrefab, trashPosition(), Quaternion.identity);
-            Instantiate(canPrefab, trashPosition(), Quaternion.identity);
-            Instantiate(plasticPrefab, trashPosition(), Quaternion.identity);
+            Instantiate(trashPrefab, trashPosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
+            Instantiate(canPrefab, trashPosition(), Quaternion.identity);  //spawna prefab på random position med rätt rotation
+            Instantiate(plasticPrefab, trashPosition(), Quaternion.identity);  //spawna prefab på random position med rätt rotation
         }
 
-        for (int i = 0; i < randomNumber2; i++)
+        for (int i = 0; i < randomNumber2; i++) // för varje randomnumber
         {
-            Instantiate(ringPrefab, jeweleryPosition(), Quaternion.identity);
-            Instantiate(redNecklacePrefab, jeweleryPosition(), Quaternion.identity);
-            Instantiate(greenNecklacePrefab, jeweleryPosition(), Quaternion.identity);
+            Instantiate(ringPrefab, jeweleryPosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
+            Instantiate(redNecklacePrefab, jeweleryPosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
+            Instantiate(greenNecklacePrefab, jeweleryPosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
         }
 
 

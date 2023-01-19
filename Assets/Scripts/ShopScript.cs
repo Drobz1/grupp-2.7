@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ShopScript : MonoBehaviour
 {
-
+    /// <summary>
+    /// DETTA SCRIPT ANVÄNDS INTE
+    /// </summary>
     Player Player;
     public GameObject NotEnoughMoney;
 

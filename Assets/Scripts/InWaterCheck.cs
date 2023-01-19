@@ -8,16 +8,18 @@ public class InWaterCheck : MonoBehaviour
     //Niljas fixade gravity
     public Rigidbody2D rb;
 
-    private int plasticValue = 50;
-    private int JeweleryValue = 100;
+    private int plasticValue = 50; //värde på plast
+    private int JeweleryValue = 100; //värde på jewelery
 
-    PlasticScore PlasticScore;
-    JewleryScore JewleryScore;
-    Player Player;
+    PlasticScore PlasticScore; //referens till plasticscore
+    JewleryScore JewleryScore; //referens till jeweleryscore
+    Player Player; //refernes till spelaren
     public bool canExit = false;
     // Start is called before the first frame update
     void Start()
     {
+
+        //REFEREnser
         PlasticScore = FindObjectOfType<PlasticScore>();
         JewleryScore = FindObjectOfType<JewleryScore>();
         Player = FindObjectOfType<Player>();
@@ -27,45 +29,45 @@ public class InWaterCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S)) //om man trycker S
         {
-            Player.rb.constraints = RigidbodyConstraints2D.None;
+            Player.rb.constraints = RigidbodyConstraints2D.None; //stäng av restrains
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "båt")
+        if(collision.gameObject.tag == "båt") //om spelaren (objektet som scriptet sitter på) kolliderar med båt
         {
-            if (!Player.deathscreenspawned)
+            if (!Player.deathscreenspawned) //om deathscreen inte är spawnad än
             {
-                canExit = true;
-                for (int i = 0; i <= PlasticScore.score; i++)
+                canExit = true; //man kan lämna
+                for (int i = 0; i <= PlasticScore.score; i++) //för varje plasticscore
                 {
-                    Player.money += plasticValue;
+                    Player.money += plasticValue; //lägg till plasticvalue på spelarens pengar.
                 }
-                for (int i = 0; i <= JewleryScore.score; i++)
+                for (int i = 0; i <= JewleryScore.score; i++) //för varje jeweleryscore
                 {
-                    Player.money += JeweleryValue;
+                    Player.money += JeweleryValue; //lägg till jeweleryvalue på spelarens pengar
                 }
-                PlasticScore.score = 0;
-                JewleryScore.score = 0;
-                Player.money -= plasticValue;
+                PlasticScore.score = 0; //reseta poäng
+                JewleryScore.score = 0; //reseta poäng
+                Player.money -= plasticValue; 
                 Player.money -= JeweleryValue;
             }
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision) //medans spelaren är på detta
     {
-        if(collision.gameObject.tag == "enterboat")
+        if(collision.gameObject.tag == "enterboat")  //om den kolliderar med något som har taget enterboat
         {
             
-            if(Input.GetKeyDown(KeyCode.E))
+            if(Input.GetKeyDown(KeyCode.E)) //om E trycks ner
             {
-                if(Player.deathscreenspawned == false)
+                if(Player.deathscreenspawned == false) //om den inte spawnat deathscreen
                 {
                     print("entered the boat");
-                    SceneManager.LoadScene("LoadingScenePP", LoadSceneMode.Single);
+                    SceneManager.LoadScene("LoadingScenePP", LoadSceneMode.Single); //loada loadginscreeen
                 }
 
             }

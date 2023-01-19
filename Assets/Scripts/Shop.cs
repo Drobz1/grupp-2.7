@@ -26,29 +26,29 @@ public class Shop : MonoBehaviour
         balanceText.text = "Balance: " + Player.money;
     }
    
-    public virtual void buyItem()
+    public virtual void buyItem() //köp item
     {
-        if(Player.money >= itemPrice)
-        {
-            Player.money -= itemPrice;
-            itemPrice += raisePrice;
+        if(Player.money >= itemPrice) //om spelarens pengar är mer än kostnaden på objektet
+        { 
+            Player.money -= itemPrice; //subtrahera spelarens pengar med kostnaden på objektet
+            itemPrice += raisePrice; //addera raiseprice till itemprice, så att det blir dyrare och dyrare. 
         }
         else
         {
-            Instantiate(notEnoughMoney, transform.position, Quaternion.identity);
+            Instantiate(notEnoughMoney, transform.position, Quaternion.identity); //annars spawna texten som visar att man har för lite pengar. 
         }
     }
 
-    public virtual void clickItem()
+    public virtual void clickItem() //klicka på knappen för att köpa
     {
-        if (Player.money >= itemPrice)
+        if (Player.money >= itemPrice) //om spelarens pengar är större än itemprice
         {
-            buyItem();
-            print("Bought an item");
+            buyItem(); //köp item
+            print("Bought an item"); 
         }
-        else if (itemPrice > Player.money)
+        else if (itemPrice > Player.money) //om det är för dyrt
         {
-            Instantiate(notEnoughMoney, transform.position, Quaternion.identity);
+            Instantiate(notEnoughMoney, transform.position, Quaternion.identity);//annars spawna texten som visar att man har för lite pengar. 
             print("You do not have enough money for this item.");
         }
         else

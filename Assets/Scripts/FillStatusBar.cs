@@ -18,7 +18,7 @@ public class FillStatusBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float fillValue = Player.tubeRemaining / Player.maxTube;
-        slider.value = fillValue;
+        float fillValue = Player.tubeRemaining / Player.maxTube;//fillvalue
+        slider.value = fillValue; //slidern visar så mycket som fillvalue är 
     }
 }

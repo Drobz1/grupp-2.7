@@ -18,6 +18,6 @@ public class DestroyTime : MonoBehaviour
 
     void destroyText()
     {
-        Destroy(gameObject, 2);
+        Destroy(gameObject, 2); //ta bort objektet efter 2 sekunder
     }
 }
