@@ -65,7 +65,7 @@ public class InWaterCheck : MonoBehaviour
                 if(Player.deathscreenspawned == false)
                 {
                     print("entered the boat");
-                    SceneManager.LoadScene("Tims scen", LoadSceneMode.Single);
+                    SceneManager.LoadScene("LoadingScenePP", LoadSceneMode.Single);
                 }
 
             }
