@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 
     private string buttonpressed;
     //Ovanför är movement
-    //_____________________________________________________:
+    //_____________________________________________________
 
 
     public bool dead = false;
