@@ -23,7 +23,7 @@ public class Flippers : Shop
     {
         Player.money -= itemPrice;
         itemPrice += raisePrice;
-        Player.speed += 0.5f;
+        Player.speed += 0.2f;
         Player.flippersLevel += 1;
     }
     // Update is called once per frame
