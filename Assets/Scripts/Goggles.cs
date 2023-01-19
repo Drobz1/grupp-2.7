@@ -25,7 +25,7 @@ public class Goggles : Shop
     {
         Player.money -= itemPrice;
         itemPrice += raisePrice;
-        goggleLevel += 1;
+        Player.gogglesLevel += 1;
         //Player.zoomValue += 1.5f;
 
     }
@@ -34,21 +34,5 @@ public class Goggles : Shop
     {
         priceTag.text = "Price: $" + itemPrice;
     }
-    public virtual void clickItem()
-    {
-        if (Player.money >= itemPrice)
-        {
-            buyItem();
-            print("Bought an item");
-        }
-        else if (itemPrice > Player.money)
-        {
-            Instantiate(NotEnoughMoney, transform.position, Quaternion.identity);
-            print("You do not have enough money for this item.");
-        }
-        else
-        {
-            print("unkown error, couldn't buy item");
-        }
-    }
+    
 }

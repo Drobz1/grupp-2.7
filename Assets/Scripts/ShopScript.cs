@@ -51,7 +51,7 @@ public class ShopScript : MonoBehaviour
         }
         else
         {
-            Instantiate(NotEnoughMoney, transform.position, Quaternion.identity);
+            //Instantiate(NotEnoughMoney, transform.position, Quaternion.identity);
 
         }
 

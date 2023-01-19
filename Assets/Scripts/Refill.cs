@@ -23,28 +23,12 @@ public class Refill : Shop
         Player.money -= itemPrice;
         itemPrice += raisePrice;
         Player.refillValue = refillValue;
-        refillLevel += 1;
+        Player.refillLevel += 1;
     }
     // Update is called once per frame
     void Update()
     {
         priceTag.text = "Price: $" + itemPrice;
     }
-    public virtual void clickItem()
-    {
-        if (Player.money >= itemPrice)
-        {
-            buyItem();
-            print("Bought an item");
-        }
-        else if (itemPrice > Player.money)
-        {
-            Instantiate(NotEnoughMoney, transform.position, Quaternion.identity);
-            print("You do not have enough money for this item.");
-        }
-        else
-        {
-            print("unkown error, couldn't buy item");
-        }
-    }
+    
 }

@@ -12,6 +12,7 @@ public class Shop : MonoBehaviour
     public int itemPrice;
     public int raisePrice;
 
+    public GameObject notEnoughMoney;
     public TMP_Text balanceText;
     void Start()
     {
@@ -27,8 +28,32 @@ public class Shop : MonoBehaviour
    
     public virtual void buyItem()
     {
-        Player.money -= itemPrice;
-        itemPrice += raisePrice;
+        if(Player.money >= itemPrice)
+        {
+            Player.money -= itemPrice;
+            itemPrice += raisePrice;
+        }
+        else
+        {
+            Instantiate(notEnoughMoney, transform.position, Quaternion.identity);
+        }
     }
 
+    public virtual void clickItem()
+    {
+        if (Player.money >= itemPrice)
+        {
+            buyItem();
+            print("Bought an item");
+        }
+        else if (itemPrice > Player.money)
+        {
+            Instantiate(notEnoughMoney, transform.position, Quaternion.identity);
+            print("You do not have enough money for this item.");
+        }
+        else
+        {
+            print("unkown error, couldn't buy item");
+        }
+    }
 }

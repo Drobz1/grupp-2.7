@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
 
     public bool deathscreenspawned = false;
     PlasticScore PlasticScore;
+    JewleryScore JewleryScore;  
     public GameObject deathscreenprefab;
     float deathTimer = 99999999;
 
@@ -56,36 +57,42 @@ public class Player : MonoBehaviour
     public Canvas pauseMenu;
     bool pauseMenuActive;
 
-    Tubes Tubes;
-    Flippers Flippers;
-    Goggles Goggles;
-    Refill Refill;
+    public static int tubeLevel = 0;
+    public static int flippersLevel = 0;
+    public static int gogglesLevel = 0;
+    public static int refillLevel = 0;
+
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        Tubes = FindObjectOfType<Tubes>();
-        Flippers = FindObjectOfType<Flippers>();
-        Goggles = FindObjectOfType<Goggles>();
-        Refill = FindObjectOfType<Refill>();
+
 
         rb = GetComponent<Rigidbody2D>();
         //Ovanför är movement
 
         PlasticScore = FindObjectOfType<PlasticScore>();
+        JewleryScore = FindObjectOfType<JewleryScore>();
         maxTube = 15;
         speed = 2;
         tubeRemaining = maxTube;
         dead = false;
+        
     }
 
+    void UpdateText()
+    {
+
+    }
 
     // Update is called once per frame
     void Update()
     {
         balanceText.text = "" + money;
-        stats.text = "Tube Level: " + Tubes.tubeLevel + "            " + "TubeRefill Level: " + Refill.refillLevel + "          " + "Flippers Level: " + Flippers.flippersLevel + "         " + "Goggles Level: " + Goggles.goggleLevel;
-             
+        stats.text = "Tube Level: " + tubeLevel + "            " + "TubeRefill Level: " + refillLevel + "          " + "Flippers Level: " + flippersLevel + "         " + "Goggles Level: " + gogglesLevel;
+
         if (Input.GetKeyDown(KeyCode.D))
         {
             buttonpressed = Right;
@@ -157,6 +164,7 @@ public class Player : MonoBehaviour
         if(tubeRemaining <= 0)
         {
             PlasticScore.score = 0;
+            JewleryScore.score = 0;
             if(!deathscreenspawned)
             {
                 Instantiate(deathscreenprefab, new Vector3(0, 0, 0), Quaternion.identity);
@@ -186,9 +194,11 @@ public class Player : MonoBehaviour
         {
             if (!pauseMenuActive)
             {
+                
                 pauseMenu.gameObject.SetActive(true);
                 Time.timeScale = 0;
                 pauseMenuActive = true;
+                
             }
             else if (pauseMenuActive == true)
             {
