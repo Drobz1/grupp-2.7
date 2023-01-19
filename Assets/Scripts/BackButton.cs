@@ -21,4 +21,5 @@ public class BackButton : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    //When pressing the back button, it changes to the main menu - Jay
 }

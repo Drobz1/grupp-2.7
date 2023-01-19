@@ -21,4 +21,5 @@ public class ContinueButton : MonoBehaviour
     {
         SceneManager.LoadScene("LoadingSceneRight");
     }
+    //When pressing the Continue button, it changes to the Loading screen - Jay
 }

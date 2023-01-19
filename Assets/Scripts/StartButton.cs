@@ -21,4 +21,5 @@ public class StartButton : MonoBehaviour
     {
         SceneManager.LoadScene("LoreScreen");
     }
+    //When pressing the Start button, it changes to the Lore scene - Jay
 }

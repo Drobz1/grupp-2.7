@@ -28,4 +28,5 @@ public class LoadSceneAfterTime : MonoBehaviour
             SceneManager.LoadScene(buildindex);
         }
     }
+    //After a certain ammount of time, it changes scene to the build index number indicated - Jay
 }

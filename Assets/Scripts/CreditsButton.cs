@@ -21,4 +21,5 @@ public class CreditsButton : MonoBehaviour
     {
         SceneManager.LoadScene("CreditsScene");
     }
+    //When pressing the Credits button, it changes to the Credits scene - Jay
 }
