@@ -83,6 +83,8 @@ public class Player : MonoBehaviour
         
         tubeRemaining = maxTube;
         dead = false;
+
+        spriteR.flipX = true;
         
     }
 
