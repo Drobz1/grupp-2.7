@@ -36,6 +36,15 @@ public class ItemSpawnManager : MonoBehaviour
         z = Random.Range(5, -5);
         return new Vector3(x, y, z);
     }
+    Vector3 treasurePosition()  //nämner ut ett antal koordinater, emellan de koordinaterna blir en random punkt utvald.
+    {
+        int x, y, z;
+        x = Random.Range(-33, -114);
+        y = Random.Range(28, 36);
+        z = Random.Range(5, -5);
+        return new Vector3(x, y, z);
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +69,12 @@ public class ItemSpawnManager : MonoBehaviour
             Instantiate(redNecklacePrefab, jeweleryPosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
             Instantiate(greenNecklacePrefab, jeweleryPosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
         }
-
+        for (int i = 0; i < 350; i++)
+        {
+            Instantiate(ringPrefab, treasurePosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
+            Instantiate(redNecklacePrefab, treasurePosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
+            Instantiate(greenNecklacePrefab, treasurePosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
+        }
 
 
     }
