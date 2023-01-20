@@ -4233,6 +4233,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1539879252535991548, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e71d27eb8e3c2d7409fbc56a9ccc1c6d, type: 3}
     - target: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
       propertyPath: m_Name
       value: "Ofr\xE4lse(1)"
@@ -4941,6 +4945,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1539879252535991548, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e71d27eb8e3c2d7409fbc56a9ccc1c6d, type: 3}
     - target: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
       propertyPath: m_Name
       value: NotEnoughMoney
