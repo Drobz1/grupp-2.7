@@ -33,11 +33,22 @@ public class InWaterCheck : MonoBehaviour
         {
             Player.rb.constraints = RigidbodyConstraints2D.None; //stäng av restrains
         }
+
+        if(canExit && Input.GetKeyDown(KeyCode.E))
+        {
+            SceneManager.LoadScene("LoadingScenePP", LoadSceneMode.Single); //loada loadginscreeen
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "båt") //om spelaren (objektet som scriptet sitter på) kolliderar med båt
+        if (collision.gameObject.tag == "enterboat")  //om den kolliderar med något som har taget enterboat
+        {
+            canExit = true;
+        }
+
+        if (collision.gameObject.tag == "båt") //om spelaren (objektet som scriptet sitter på) kolliderar med båt
         {
             if (!Player.deathscreenspawned) //om deathscreen inte är spawnad än
             {
@@ -59,19 +70,7 @@ public class InWaterCheck : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision) //medans spelaren är på detta
     {
-        if(collision.gameObject.tag == "enterboat")  //om den kolliderar med något som har taget enterboat
-        {
-            
-            if(Input.GetKeyDown(KeyCode.E)) //om E trycks ner
-            {
-                if(Player.deathscreenspawned == false) //om den inte spawnat deathscreen
-                {
-                    print("entered the boat");
-                    SceneManager.LoadScene("LoadingScenePP", LoadSceneMode.Single); //loada loadginscreeen
-                }
-
-            }
-        }
+        
         if (collision.gameObject.tag == "water")
         {
 
@@ -90,6 +89,11 @@ public class InWaterCheck : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if(collision.gameObject.tag == "enterboat")
+        {
+            canExit = false;
+        }
+
         if(collision.gameObject.tag == "water")
         {
             Player.rb.constraints = RigidbodyConstraints2D.FreezePositionY;
