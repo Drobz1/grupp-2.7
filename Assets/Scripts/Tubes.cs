@@ -14,10 +14,9 @@ public class Tubes : Shop
     // Start is called before the first frame update
     void Start()
     {
-
-    itemPrice = 200;
         raisePrice = 200;
         Player = FindObjectOfType<Player>();
+        itemPrice = Player.tubeLevel * 200 + 200;
     }
     public override void buyItem()
     {
