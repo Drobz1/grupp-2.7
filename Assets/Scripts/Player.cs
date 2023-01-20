@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMPro; 
+using TMPro;
+using UnityEngine.SocialPlatforms.GameCenter;
 
 public class Player : MonoBehaviour
 {
@@ -44,6 +45,9 @@ public class Player : MonoBehaviour
     public static float tubeRemaining;
     public bool isFilled;
     public static float refillValue = 1;
+    private int spriteVersion = 0;
+    private SpriteRenderer spriteR;
+    private Sprite[] sprites;
 
     public bool deathscreenspawned = false;
     PlasticScore PlasticScore;
@@ -68,6 +72,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spriteR = gameObject.GetComponent<SpriteRenderer>();
 
         rb = GetComponent<Rigidbody2D>();
         //Ovanför är movement
@@ -226,25 +231,13 @@ public class Player : MonoBehaviour
 
     private void Flip()
     {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+            spriteR.flipX = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            spriteR.flipX = false;
         }
     }
-    
-
-    /*void RaknaUtRiktning() //Räknar ut vilket håll den åker mot
-    {
-        Vector3 facing = rb.rotation * Vector3.forward;
-        Vector3 velocity = rb.velocity;
-
-        // returns the absolute minimum angle difference
-        float angleDifference = Vector3.Angle(facing, velocity);
-
-        // returns the angle difference relative to a third axis (e.g. straight up)
-        float relativeAngleDifference = Vector3.SignedAngle(facing, velocity, Vector3.up);
-    } */
 }
