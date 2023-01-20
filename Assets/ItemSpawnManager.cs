@@ -46,7 +46,7 @@ public class ItemSpawnManager : MonoBehaviour
     void spawnItems() //funktion som spawnar items
     {
         randomNumber = Random.Range(7, 13); //ge randomnumber ett random värde 
-        randomNumber2 = Random.Range(4, 8);  //ge randomnumber ett random värde 
+        randomNumber2 = Random.Range(2, 4);  //ge randomnumber ett random värde 
         for (int i = 0; i < randomNumber; i++) //för varje randomnumber
         {
             Instantiate(trashPrefab, trashPosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
