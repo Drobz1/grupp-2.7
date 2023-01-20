@@ -8,8 +8,8 @@ public class InWaterCheck : MonoBehaviour
     //Niljas fixade gravity
     public Rigidbody2D rb;
 
-    private int plasticValue = 50; //värde på plast
-    private int JeweleryValue = 100; //värde på jewelery
+    private int plasticValue = 25; //värde på plast
+    private int JeweleryValue = 200; //värde på jewelery
 
     PlasticScore PlasticScore; //referens till plasticscore
     JewleryScore JewleryScore; //referens till jeweleryscore
