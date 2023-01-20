@@ -7,7 +7,7 @@ public class PinaColada : Shop
 {
     public Text priceTag;
 
-
+    static bool pinaBought = false;
     public GameObject NotEnoughMoney;
     Player Player;
 
@@ -16,6 +16,10 @@ public class PinaColada : Shop
     // Start is called before the first frame update
     void Start()
     {
+        if(pinaBought == true)
+        {
+            priceTag.text = "Drunk mf";
+        }
         itemPrice = 100;
         raisePrice = 99899;
         Player = FindObjectOfType<Player>();
@@ -25,11 +29,16 @@ public class PinaColada : Shop
         Player.money -= itemPrice;
         boughtPinaColada = true;
         itemPrice += raisePrice;
+        pinaBought = true;
         
     }
     // Update is called once per frame
     void Update()
     {
-        priceTag.text = "Price: $" + itemPrice;
+        if( pinaBought == false)
+        {
+            priceTag.text = "Price: $" + itemPrice;
+        }
+
     }
 }

@@ -16,9 +16,9 @@ public class Goggles : Shop
     void Start()
     {
         goggleLevel = 0;
-        itemPrice = 100;
-        raisePrice = 200;
+        raisePrice = 500;
         Player = FindObjectOfType<Player>();
+        itemPrice = Player.gogglesLevel * 500 + 500;
     }
 
     public override void buyItem()

@@ -15,10 +15,9 @@ public class Flippers : Shop
     void Start()
     {
         flippersLevel = 0;
-        itemPrice = 200;
         raisePrice = 200;
         Player = FindObjectOfType<Player>();
-
+        itemPrice = Player.flippersLevel * 200 + 200;
     }
     public override void buyItem()
     {

@@ -14,9 +14,9 @@ public class Refill : Shop
     // Start is called before the first frame update
     void Start()
     {
-        itemPrice = 1000;
-        raisePrice = 3000;
+        raisePrice = 1000;
         Player = FindObjectOfType<Player>();
+        itemPrice = Player.refillLevel * 1000 + 1000;
     }
     public override void buyItem()
     {
