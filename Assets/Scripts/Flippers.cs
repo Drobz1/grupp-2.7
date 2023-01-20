@@ -18,6 +18,7 @@ public class Flippers : Shop
         itemPrice = 200;
         raisePrice = 200;
         Player = FindObjectOfType<Player>();
+
     }
     public override void buyItem()
     {
