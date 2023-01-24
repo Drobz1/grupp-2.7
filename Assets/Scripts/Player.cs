@@ -91,7 +91,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = tubeLevel + 1;
 
         balanceText.text = "" + money;
         stats.text = "Tube Level: " + tubeLevel + "            " + "TubeRefill Level: " + refillLevel + "          " + "Flippers Level: " + flippersLevel + "         " + "Goggles Level: " + gogglesLevel;
@@ -133,7 +132,7 @@ public class Player : MonoBehaviour
         }
         else if (buttonpressed == Up)
         {
-            rb.AddForce(new Vector2(0, swimUp *= speed));
+            rb.AddForce(new Vector2(0f, swimUp *= speed));
         }
 
         Flip();
@@ -175,9 +174,6 @@ public class Player : MonoBehaviour
                 deathTimer = 5;
             }
             
-
-
-
         }
 
         if(Input.GetKeyDown(KeyCode.O))
