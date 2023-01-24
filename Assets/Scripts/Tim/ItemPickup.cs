@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-   
+    ItemSpawnManager ItemSpawnManager;
     private PlasticScore scoreManager;
 
     private void Start()
@@ -15,7 +15,9 @@ public class ItemPickup : MonoBehaviour
     {
         if (collision.tag == "Player") //när saker med denna skript kolliderar med någon med tag "Player" så ger den 1 poäng och förstör objektet. -Ludvig
         {
+            ItemSpawnManager.randomNumber -= 1;
             scoreManager.score += 1f; 
+
             Destroy(gameObject);
         }
     }

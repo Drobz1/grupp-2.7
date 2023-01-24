@@ -16,8 +16,8 @@ public class ItemSpawnManager : MonoBehaviour
 
 
     //INTS SOM ANVÄNDS TILL SENARE
-    int randomNumber;
-    int randomNumber2;
+    public int randomNumber;
+    public int randomNumber2;
 
     Vector3 trashPosition()  //nämner ut ett antal koordinater, emellan de koordinaterna blir en random punkt utvald.
     {
@@ -61,6 +61,7 @@ public class ItemSpawnManager : MonoBehaviour
             Instantiate(trashPrefab, trashPosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
             Instantiate(canPrefab, trashPosition(), Quaternion.identity);  //spawna prefab på random position med rätt rotation
             Instantiate(plasticPrefab, trashPosition(), Quaternion.identity);  //spawna prefab på random position med rätt rotation
+
         }
 
         for (int i = 0; i < randomNumber2; i++) // för varje randomnumber
@@ -68,6 +69,7 @@ public class ItemSpawnManager : MonoBehaviour
             Instantiate(ringPrefab, jeweleryPosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
             Instantiate(redNecklacePrefab, jeweleryPosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
             Instantiate(greenNecklacePrefab, jeweleryPosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
+
         }
         for (int i = 0; i < 350; i++)
         {
