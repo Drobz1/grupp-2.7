@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
     public static int flippersLevel = 0;
     public static int gogglesLevel = 0;
     public static int refillLevel = 0;
+    public static int flashlightLevel = 0;
 
 
     

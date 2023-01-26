@@ -8,16 +8,21 @@ using System;
 
 public class Shop : MonoBehaviour
 {
+    
+
+
     Player Player;
     public int itemPrice;
     public int raisePrice;
 
     public GameObject notEnoughMoney;
     public TMP_Text balanceText;
+
+    public AudioSource buysound;
     void Start()
     {
         Player = FindObjectOfType<Player>();
-
+        buysound = FindObjectOfType<AudioSource>();
     }
 
 

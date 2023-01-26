@@ -30,14 +30,19 @@ public class PinaColada : Shop
         boughtPinaColada = true;
         itemPrice += raisePrice;
         pinaBought = true;
-        
+
+
     }
     // Update is called once per frame
     void Update()
     {
         if( pinaBought == false)
         {
-            priceTag.text = "Price: $" + itemPrice;
+            priceTag.text = "Price: $" + itemPrice; 
+        }
+        else if (pinaBought == true)
+        {
+            priceTag.text = "Drunk mf";
         }
 
     }
