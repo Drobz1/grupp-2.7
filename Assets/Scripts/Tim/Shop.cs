@@ -17,7 +17,7 @@ public class Shop : MonoBehaviour
 
     public GameObject notEnoughMoney;
     public TMP_Text balanceText;
-    public Text boughtItem;
+    public GameObject boughtItem;
 
     public AudioSource buysound;
     void Start()
@@ -34,7 +34,7 @@ public class Shop : MonoBehaviour
    
     public virtual void buyItem() //köp item
     {
-        if(Player.money >= itemPrice) //om spelarens pengar är mer än kostnaden på objektet
+        if(Player.money >=  itemPrice) //om spelarens pengar är mer än kostnaden på objektet
         { 
             Player.money -= itemPrice; //subtrahera spelarens pengar med kostnaden på objektet
             itemPrice += raisePrice; //addera raiseprice till itemprice, så att det blir dyrare och dyrare. 
