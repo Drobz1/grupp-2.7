@@ -38,11 +38,13 @@ public class Shop : MonoBehaviour
         { 
             Player.money -= itemPrice; //subtrahera spelarens pengar med kostnaden på objektet
             itemPrice += raisePrice; //addera raiseprice till itemprice, så att det blir dyrare och dyrare. 
-            Instantiate(boughtItem, new Vector3(0, 0, 0), Quaternion.identity);
+
         }
         else
         {
             Instantiate(notEnoughMoney, transform.position, Quaternion.identity); //annars spawna texten som visar att man har för lite pengar. 
+         RectTransform newItem =   Instantiate(boughtItem, new Vector3(0, 0, 0), Quaternion.identity).GetComponent<RectTransform>();
+            newItem.position = new Vector3(0, 0, 0);
         }
     }
 
