@@ -350,7 +350,7 @@ RectTransform:
   - {fileID: 690964140}
   - {fileID: 1313022995}
   m_Father: {fileID: 903430895}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -373,6 +373,7 @@ MonoBehaviour:
   raisePrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
+  boughtItem: {fileID: 0}
   buysound: {fileID: 0}
   NotEnoughMoney: {fileID: 128590687}
   priceTag: {fileID: 690964141}
@@ -399,8 +400,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
+    m_PressedColor: {r: 1, g: 0.9411765, b: 0.09019608, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -501,7 +502,7 @@ RectTransform:
   m_LocalScale: {x: 0.020026311, y: 0.020026311, z: 0.020026311}
   m_Children: []
   m_Father: {fileID: 903430895}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1311,7 +1312,7 @@ RectTransform:
   - {fileID: 292642305}
   - {fileID: 993293544}
   m_Father: {fileID: 903430895}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1334,6 +1335,7 @@ MonoBehaviour:
   raisePrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
+  boughtItem: {fileID: 0}
   buysound: {fileID: 0}
   priceTag: {fileID: 292642306}
   NotEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
@@ -1359,8 +1361,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
+    m_PressedColor: {r: 1, g: 0.9411765, b: 0.09019608, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2522,7 +2524,7 @@ RectTransform:
   - {fileID: 1253521681}
   - {fileID: 1797441271}
   m_Father: {fileID: 903430895}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2545,6 +2547,7 @@ MonoBehaviour:
   raisePrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
+  boughtItem: {fileID: 0}
   buysound: {fileID: 0}
   NotEnoughMoney: {fileID: 128590687}
   priceTag: {fileID: 1253521682}
@@ -2571,8 +2574,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
+    m_PressedColor: {r: 1, g: 0.9411765, b: 0.09019608, a: 0.67058825}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2816,15 +2819,16 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1705983789}
   - {fileID: 990461922}
   - {fileID: 230835688}
   - {fileID: 816883667}
   - {fileID: 1565970715}
   - {fileID: 1758800465}
+  - {fileID: 313732848}
   - {fileID: 236560952}
   - {fileID: 2097759532}
   - {fileID: 1488627366}
-  - {fileID: 313732848}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2868,7 +2872,7 @@ RectTransform:
   - {fileID: 1556715061}
   - {fileID: 1081022466}
   m_Father: {fileID: 903430895}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2891,6 +2895,7 @@ MonoBehaviour:
   raisePrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
+  boughtItem: {fileID: 0}
   buysound: {fileID: 0}
   priceTag: {fileID: 1556715062}
 --- !u!114 &990461924
@@ -2915,8 +2920,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
+    m_PressedColor: {r: 1, g: 0.9419911, b: 0.09119487, a: 0.8980392}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3808,7 +3813,7 @@ RectTransform:
   m_Children:
   - {fileID: 1567530174}
   m_Father: {fileID: 903430895}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4102,7 +4107,7 @@ RectTransform:
   - {fileID: 264327099}
   - {fileID: 797001033}
   m_Father: {fileID: 903430895}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4125,6 +4130,7 @@ MonoBehaviour:
   raisePrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
+  boughtItem: {fileID: 0}
   buysound: {fileID: 0}
   priceTag: {fileID: 264327100}
   NotEnoughMoney: {fileID: 128590687}
@@ -4151,8 +4157,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
+    m_PressedColor: {r: 1, g: 0.9411765, b: 0.09019608, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -4357,6 +4363,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567530173}
   m_CullTransparentMesh: 1
+--- !u!224 &1705983789 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+  m_PrefabInstance: {fileID: 8170932778851735158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1758800464
 GameObject:
   m_ObjectHideFlags: 0
@@ -4392,7 +4403,7 @@ RectTransform:
   - {fileID: 2061134038}
   - {fileID: 746657796}
   m_Father: {fileID: 903430895}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4421,8 +4432,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
+    m_PressedColor: {r: 1, g: 0.9411765, b: 0.09019608, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -4509,6 +4520,7 @@ MonoBehaviour:
   raisePrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
+  boughtItem: {fileID: 0}
   buysound: {fileID: 0}
   priceTag: {fileID: 2061134039}
   NotEnoughMoney: {fileID: 128590687}
@@ -4620,6 +4632,7 @@ MonoBehaviour:
   raisePrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 236560953}
+  boughtItem: {fileID: 8170932779314489690, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
   buysound: {fileID: 248194810}
 --- !u!4 &1792007941
 Transform:
@@ -5593,7 +5606,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 903430895}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5734,6 +5747,103 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123698985}
   m_CullTransparentMesh: 1
+--- !u!1001 &8170932778851735158
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 903430895}
+    m_Modifications:
+    - target: {fileID: 8170932779314489690, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_Name
+      value: BoughtItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -959.56024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -543.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170932779314489691, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
 --- !u!1001 &8439097610986958887
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12511,6 +12511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1069250697}
   - component: {fileID: 1069250696}
+  - component: {fileID: 1069250698}
   m_Layer: 0
   m_Name: Parametric Light 2D
   m_TagString: Untagged
@@ -12543,9 +12544,9 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 0
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 40
-  m_PointLightOuterAngle: 64
-  m_PointLightInnerRadius: 2.19
+  m_PointLightInnerAngle: 19.88
+  m_PointLightOuterAngle: 46
+  m_PointLightInnerRadius: 2.2181165
   m_PointLightOuterRadius: 8.727827
   m_PointLightDistance: 3
   m_PointLightQuality: 1
@@ -12566,13 +12567,25 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069250695}
-  m_LocalRotation: {x: -0, y: -0, z: -0.703439, w: 0.71075565}
-  m_LocalPosition: {x: 0.25, y: 0.09, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7034381, w: 0.71075654}
+  m_LocalPosition: {x: 0.278, y: 0.09, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.16666667}
   m_Children: []
   m_Father: {fileID: 1472882127}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -93.808}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.407}
+--- !u!114 &1069250698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069250695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc05a91726d48049935a1fd23818f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1077185159
 GameObject:
   m_ObjectHideFlags: 0
