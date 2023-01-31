@@ -52,7 +52,7 @@ public class InWaterCheck : MonoBehaviour
         {
             if (!Player.deathscreenspawned) //om deathscreen inte är spawnad än
             {
-                canExit = true; //man kan lämna
+                
                 for (int i = 0; i <= PlasticScore.score; i++) //för varje plasticscore
                 {
                     Player.money += plasticValue; //lägg till plasticvalue på spelarens pengar.

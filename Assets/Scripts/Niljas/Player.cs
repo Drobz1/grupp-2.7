@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     public static float maxTube = 15;
     public static float tubeRemaining;
     public bool isFilled;
-    public static float refillValue = 1;
+    public static float refillValue = 2;
     private int spriteVersion = 0;
     private SpriteRenderer spriteR;
     private Sprite[] sprites;
