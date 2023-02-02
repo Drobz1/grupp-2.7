@@ -16,6 +16,9 @@ public class InWaterCheck : MonoBehaviour
     Player Player; //refernes till spelaren
     public bool canExit = false;
     // Start is called before the first frame update
+
+    public SpriteRenderer ladderNormal;
+    public SpriteRenderer ladderWhite;
     void Start()
     {
 
@@ -46,6 +49,8 @@ public class InWaterCheck : MonoBehaviour
         if (collision.gameObject.tag == "enterboat")  //om den kolliderar med något som har taget enterboat
         {
             canExit = true;
+            ladderNormal.gameObject.SetActive(false);
+            ladderWhite.gameObject.SetActive(true);
         }
 
         if (collision.gameObject.tag == "båt") //om spelaren (objektet som scriptet sitter på) kolliderar med båt
@@ -92,6 +97,8 @@ public class InWaterCheck : MonoBehaviour
         if(collision.gameObject.tag == "enterboat")
         {
             canExit = false;
+            ladderNormal.gameObject.SetActive(true);
+            ladderWhite.gameObject.SetActive(false) ;
         }
 
         if(collision.gameObject.tag == "water")
