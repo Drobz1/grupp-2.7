@@ -371,10 +371,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 0
   raisePrice: 0
+  latestPrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
-  boughtItem: {fileID: 0}
-  buysound: {fileID: 0}
+  moneyDrawn: {fileID: 466108072}
+  buysound: {fileID: 248194810}
   NotEnoughMoney: {fileID: 128590687}
   priceTag: {fileID: 690964141}
   speedGain: 2
@@ -1333,10 +1334,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 0
   raisePrice: 0
+  latestPrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
-  boughtItem: {fileID: 0}
-  buysound: {fileID: 0}
+  moneyDrawn: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+  buysound: {fileID: 248194810}
   priceTag: {fileID: 292642306}
   NotEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
 --- !u!114 &313732850
@@ -1383,8 +1385,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Flippers, Assembly-CSharp
+      - m_Target: {fileID: 313732849}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
         m_MethodName: clickItem
         m_Mode: 1
         m_Arguments:
@@ -1512,10 +1514,10 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454578439}
   m_CullTransparentMesh: 1
---- !u!1 &487005632 stripped
+--- !u!1 &466108072 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7985242149181570919, guid: 4cb90040cb0e5324c8c5540c98c775a9, type: 3}
-  m_PrefabInstance: {fileID: 1065680921696029721}
+  m_CorrespondingSourceObject: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+  m_PrefabInstance: {fileID: 8663072628721918252}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &502880165
 GameObject:
@@ -1528,6 +1530,7 @@ GameObject:
   - component: {fileID: 502880168}
   - component: {fileID: 502880167}
   - component: {fileID: 502880166}
+  - component: {fileID: 502880169}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1600,6 +1603,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &502880169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502880165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &529828673
 GameObject:
   m_ObjectHideFlags: 0
@@ -2550,10 +2585,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 0
   raisePrice: 0
+  latestPrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
-  boughtItem: {fileID: 0}
-  buysound: {fileID: 0}
+  moneyDrawn: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+  buysound: {fileID: 248194810}
   NotEnoughMoney: {fileID: 128590687}
   priceTag: {fileID: 1253521682}
   refillValue: 2
@@ -2707,7 +2743,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 2fcbd84606f122a41a63ba0fed7055af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2897,10 +2933,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 0
   raisePrice: 0
+  latestPrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
-  boughtItem: {fileID: 487005632}
-  buysound: {fileID: 0}
+  moneyDrawn: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+  buysound: {fileID: 248194810}
   priceTag: {fileID: 1556715062}
 --- !u!114 &990461924
 MonoBehaviour:
@@ -4132,10 +4169,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 0
   raisePrice: 0
+  latestPrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
-  boughtItem: {fileID: 0}
-  buysound: {fileID: 0}
+  moneyDrawn: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+  buysound: {fileID: 248194810}
   priceTag: {fileID: 264327100}
   NotEnoughMoney: {fileID: 128590687}
   boughtPinaColada: 0
@@ -4517,10 +4555,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 0
   raisePrice: 0
+  latestPrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
-  boughtItem: {fileID: 0}
-  buysound: {fileID: 0}
+  moneyDrawn: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+  buysound: {fileID: 248194810}
   priceTag: {fileID: 2061134039}
   NotEnoughMoney: {fileID: 128590687}
 --- !u!1 &1760915746
@@ -4629,9 +4668,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 0
   raisePrice: 0
+  latestPrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 236560953}
-  boughtItem: {fileID: 487005632}
+  moneyDrawn: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
   buysound: {fileID: 248194810}
 --- !u!4 &1792007941
 Transform:
@@ -5904,3 +5944,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
+--- !u!1001 &8663072628721918252
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+      propertyPath: m_Name
+      value: TestText
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663072628844076935, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663072628844076935, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663072628844076935, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663072628844076935, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.71808726
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663072628844076935, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663072628844076935, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663072628844076935, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663072628844076935, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663072628844076935, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663072628844076935, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663072628844076935, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}

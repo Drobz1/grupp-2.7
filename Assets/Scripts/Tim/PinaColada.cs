@@ -26,9 +26,9 @@ public class PinaColada : Shop
     }
     public override void buyItem()
     {
-        Player.money -= itemPrice;
+        base.buyItem();
         boughtPinaColada = true;
-        itemPrice += raisePrice;
+
         pinaBought = true;
 
 

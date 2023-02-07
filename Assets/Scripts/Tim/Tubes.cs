@@ -20,12 +20,11 @@ public class Tubes : Shop
     }
     public override void buyItem()
     {
+        base.buyItem();
         if(Player.tubeEquipped == false)
         {
             Player.tubeEquipped = true;
         }
-        Player.money -= itemPrice;
-        itemPrice += raisePrice;
         Player.maxTube += 5;
         Player.tubeLevel += 1;
     }

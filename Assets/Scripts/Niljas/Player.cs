@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private float vertical;
     private bool isFacingRight = true;
 
-
+    
     float maxspeed = 7;
     public Rigidbody2D rb;
 

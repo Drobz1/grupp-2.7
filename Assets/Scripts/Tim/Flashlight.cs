@@ -22,8 +22,7 @@ public class Flashlight : Shop
     }
     public override void buyItem()
     {
-        Player.money -= itemPrice;
-        itemPrice += raisePrice;
+        base.buyItem();
         Player.flashlightLevel += 1;
         //Player.zoomValue += 1.5f;
         gameObject.SetActive(false);

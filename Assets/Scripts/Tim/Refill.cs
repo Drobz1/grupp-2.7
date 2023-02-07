@@ -20,10 +20,10 @@ public class Refill : Shop
     }
     public override void buyItem()
     {
-        Player.money -= itemPrice;
-        itemPrice += raisePrice;
+        base.buyItem();
         Player.refillValue = refillValue;
         Player.refillLevel += 1;
+
     }
     // Update is called once per frame
     void Update()
