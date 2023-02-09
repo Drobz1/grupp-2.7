@@ -58,7 +58,7 @@ MonoBehaviour:
     m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.33
     min: 0
     max: 1
   clamp:
@@ -107,7 +107,7 @@ MonoBehaviour:
     showEyeDropper: 1
   center:
     m_OverrideState: 1
-    m_Value: {x: 0.5, y: 0.24}
+    m_Value: {x: 0.5, y: 0.4}
   intensity:
     m_OverrideState: 1
     m_Value: 0.28
