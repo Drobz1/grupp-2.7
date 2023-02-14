@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Flashlight : Shop
 {
     public Text priceTag;
-    public static int goggleLevel = 0;
+    public static int flashLightLevel = 0;
 
 
     public GameObject NotEnoughMoney;
@@ -15,10 +15,10 @@ public class Flashlight : Shop
     // Start is called before the first frame update
     void Start()
     {
-        goggleLevel = 0;    
+        flashLightLevel = 0;
         raisePrice = 500;
         Player = FindObjectOfType<Player>();
-        itemPrice = Player.gogglesLevel * 500 + 500;
+        itemPrice = Player.flashlightLevel * 500 + 500;
     }
     public override void buyItem()
     {

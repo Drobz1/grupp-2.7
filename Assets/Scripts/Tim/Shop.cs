@@ -14,7 +14,7 @@ public class Shop : MonoBehaviour
     Player Player;
     public int itemPrice;
     public int raisePrice;
-    public int latestPrice;
+    public static int latestPrice;
 
     public GameObject notEnoughMoney;
     public TMP_Text balanceText;
@@ -40,8 +40,10 @@ public class Shop : MonoBehaviour
         if(Player.money >=  itemPrice) //om spelarens pengar är mer än kostnaden på objektet
         {
             Player.money -= itemPrice ; //subtrahera spelarens pengar med kostnaden på objektet
+            latestPrice = itemPrice;
             itemPrice += raisePrice; //addera raiseprice till itemprice, så att det blir dyrare och dyrare. 
             buysound.Play();
+
 
             Instantiate(moneyDrawn, new Vector3(0, -2.34f, 0), Quaternion.identity);
         }

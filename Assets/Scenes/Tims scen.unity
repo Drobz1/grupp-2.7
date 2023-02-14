@@ -371,10 +371,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 0
   raisePrice: 0
-  latestPrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
-  moneyDrawn: {fileID: 466108072}
+  moneyDrawn: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
   buysound: {fileID: 248194810}
   NotEnoughMoney: {fileID: 128590687}
   priceTag: {fileID: 690964141}
@@ -1334,7 +1333,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 0
   raisePrice: 0
-  latestPrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
   moneyDrawn: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
@@ -1514,11 +1512,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454578439}
   m_CullTransparentMesh: 1
---- !u!1 &466108072 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
-  m_PrefabInstance: {fileID: 8663072628721918252}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &502880165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1879,6 +1872,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 917c9c128b91e4b4e8812c495bc0b78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  profile: {fileID: 0}
+  LensDistortion: {fileID: 0}
   rb: {fileID: 673891060}
   movespeed: 80
   reversespeed: -80
@@ -2585,7 +2580,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 0
   raisePrice: 0
-  latestPrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
   moneyDrawn: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
@@ -2933,7 +2927,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 0
   raisePrice: 0
-  latestPrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
   moneyDrawn: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
@@ -4169,14 +4162,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 0
   raisePrice: 0
-  latestPrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
   moneyDrawn: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
   buysound: {fileID: 248194810}
   priceTag: {fileID: 264327100}
   NotEnoughMoney: {fileID: 128590687}
-  boughtPinaColada: 0
 --- !u!114 &1565970717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4555,7 +4546,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 0
   raisePrice: 0
-  latestPrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 0}
   moneyDrawn: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
@@ -4668,7 +4658,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 0
   raisePrice: 0
-  latestPrice: 0
   notEnoughMoney: {fileID: 2375407518706995061, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   balanceText: {fileID: 236560953}
   moneyDrawn: {fileID: 8663072628844076932, guid: a195be8cb9cba5445a765da7349f6c23, type: 3}
@@ -5136,6 +5125,78 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: -9151819491425461864, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0539360ae96a5cf40ae58c749f9b7fde, type: 3}
+--- !u!1 &1977962989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1977962991}
+  - component: {fileID: 1977962990}
+  m_Layer: 0
+  m_Name: Global Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1977962990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977962989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 4
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+--- !u!4 &1977962991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977962989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6881022, y: 1.0135568, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1980049669
 GameObject:
   m_ObjectHideFlags: 0

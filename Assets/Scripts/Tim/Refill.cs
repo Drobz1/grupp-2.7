@@ -10,7 +10,7 @@ public class Refill : Shop
 
     public Text priceTag;
     public static int refillLevel = 0;
-    public int refillValue = 2;
+    public float refillValue = 2;
     // Start is called before the first frame update
     void Start()
     {

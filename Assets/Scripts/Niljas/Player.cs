@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
     public static float maxTube = 15;
     public static float tubeRemaining;
     public bool isFilled;
-    public static float refillValue = 2;
+    public static float refillValue = 2.5f;
     private int spriteVersion = 0;
     private SpriteRenderer spriteR;
     private Sprite[] sprites;
@@ -100,7 +100,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if(PinaColada.pinaBought)
         {
             drunkTime -= Time.deltaTime;

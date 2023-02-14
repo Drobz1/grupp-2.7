@@ -33,10 +33,13 @@ public class MoneyDrawn : MonoBehaviour
         }
         Fadeout = new Color32(255, 255, 255, fade);
 
-        transform.position += new Vector3(0, 0.05f, 0);
+        transform.position += new Vector3(0, 0.02f, 0);
         fade -= 1;
         moneyDrawnMesh.color = Fadeout;
         
-
+        if(fade == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
