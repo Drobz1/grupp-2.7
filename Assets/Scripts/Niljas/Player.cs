@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Player : MonoBehaviour
     private float vertical;
     private bool isFacingRight = true;
 
+    [SerializeField] PostProcessProfile profile;
+    public LensDistortion LensDistortion;
     
     float maxspeed = 7;
     public Rigidbody2D rb;
@@ -67,11 +70,12 @@ public class Player : MonoBehaviour
     public static int flashlightLevel = 0;
 
 
-    
-
+    PinaColada PinaColada;
+    float drunkTime = 25;
     // Start is called before the first frame update
     void Start()
     {
+        PinaColada = FindObjectOfType<PinaColada>();
         spriteR = gameObject.GetComponent<SpriteRenderer>();
 
         rb = GetComponent<Rigidbody2D>();
@@ -85,7 +89,11 @@ public class Player : MonoBehaviour
         dead = false;
 
         spriteR.flipX = true;
+
+        LensDistortion = FindObjectOfType<LensDistortion>();
+
         
+
     }
 
 
@@ -93,29 +101,58 @@ public class Player : MonoBehaviour
     void Update()
     {
 
+        if(PinaColada.pinaBought)
+        {
+            drunkTime -= Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                rb.AddForce(new Vector2(reversespeed *= speed, 0f));
+                
+            }
+            else if (Input.GetKeyDown(KeyCode.A))
+            {
+                rb.AddForce(new Vector2(movespeed *= speed, 0f));
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                rb.AddForce(new Vector2(0f, swimUp *= speed));
+            }
+            else if (Input.GetKeyDown(KeyCode.W))
+            {
+                rb.AddForce(new Vector2(0f, swimDown *= speed));
+            }
+        }
+        if(drunkTime <= 0)
+        {
+            PinaColada.pinaBought = false;
+        }
+
         balanceText.text = "" + money;
         stats.text = "Tube Level: " + tubeLevel + "            " + "TubeRefill Level: " + refillLevel + "          " + "Flippers Level: " + flippersLevel + "         " + "Goggles Level: " + gogglesLevel;
-
-        if (Input.GetKeyDown(KeyCode.D))
+        if (!PinaColada.pinaBought)
         {
-            buttonpressed = Right;
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                buttonpressed = Right;
+            }
+            else if (Input.GetKeyDown(KeyCode.A))
+            {
+                buttonpressed = Left;
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                buttonpressed = Down;
+            }
+            else if (Input.GetKeyDown(KeyCode.W))
+            {
+                buttonpressed = Up;
+            }
+            else
+            {
+                buttonpressed = null;
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            buttonpressed = Left;
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            buttonpressed = Down;
-        }
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            buttonpressed = Up;
-        }
-        else
-        {
-            buttonpressed = null;
-        }
+       
 
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxspeed);
 
