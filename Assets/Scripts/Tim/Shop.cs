@@ -26,7 +26,6 @@ public class Shop : MonoBehaviour
     {
         Player = FindObjectOfType<Player>();
         buysound = FindObjectOfType<AudioSource>();
-        Player.money = 100000;
     }
 
 
