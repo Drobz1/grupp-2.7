@@ -16,9 +16,9 @@ public class Flashlight : Shop
     void Start()
     {
         flashLightLevel = 0;
-        raisePrice = 500;
+        raisePrice = 100;
         Player = FindObjectOfType<Player>();
-        itemPrice = Player.flashlightLevel * 500 + 500;
+        itemPrice = Player.flashlightLevel * 500 + 100;
     }
     public override void buyItem()
     {

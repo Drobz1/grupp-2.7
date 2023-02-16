@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
+
 
 public class Player : MonoBehaviour
 {
@@ -13,7 +16,7 @@ public class Player : MonoBehaviour
     private bool isFacingRight = true;
 
     [SerializeField] PostProcessProfile profile;
-    public LensDistortion LensDistortion;
+
     
     float maxspeed = 7;
     public Rigidbody2D rb;
@@ -72,9 +75,14 @@ public class Player : MonoBehaviour
 
     PinaColada PinaColada;
     float drunkTime = 25;
+
+    PostProcessVolume volym;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        
         PinaColada = FindObjectOfType<PinaColada>();
         spriteR = gameObject.GetComponent<SpriteRenderer>();
 
@@ -90,7 +98,6 @@ public class Player : MonoBehaviour
 
         spriteR.flipX = true;
 
-        LensDistortion = FindObjectOfType<LensDistortion>();
 
         
 

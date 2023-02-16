@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class InWaterCheck : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class InWaterCheck : MonoBehaviour
 
     public SpriteRenderer ladderNormal;
     public SpriteRenderer ladderWhite;
+    public TMP_Text Enterboat;
+    public TMP_Text clickE;
     void Start()
     {
 
@@ -51,6 +54,8 @@ public class InWaterCheck : MonoBehaviour
             canExit = true;
             ladderNormal.gameObject.SetActive(false);
             ladderWhite.gameObject.SetActive(true);
+            Enterboat.gameObject.SetActive(true);
+            clickE.gameObject.SetActive(true);
         }
 
         if (collision.gameObject.tag == "båt") //om spelaren (objektet som scriptet sitter på) kolliderar med båt
@@ -99,6 +104,8 @@ public class InWaterCheck : MonoBehaviour
             canExit = false;
             ladderNormal.gameObject.SetActive(true);
             ladderWhite.gameObject.SetActive(false) ;
+            clickE.gameObject.SetActive(false);
+            Enterboat.gameObject.SetActive(false);
         }
 
         if(collision.gameObject.tag == "water")
