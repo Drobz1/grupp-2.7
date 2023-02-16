@@ -7,12 +7,12 @@ public class PinaColada : Shop
 {
     public Text priceTag;
 
-    static bool pinaBought = false;
+    static public bool pinaBought = false;
     public GameObject NotEnoughMoney;
     Player Player;
 
 
-    public bool boughtPinaColada = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +26,7 @@ public class PinaColada : Shop
     }
     public override void buyItem()
     {
-        Player.money -= itemPrice;
-        boughtPinaColada = true;
-        itemPrice += raisePrice;
+        base.buyItem();
         pinaBought = true;
 
 

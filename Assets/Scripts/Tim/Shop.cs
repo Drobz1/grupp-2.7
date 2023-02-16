@@ -14,16 +14,19 @@ public class Shop : MonoBehaviour
     Player Player;
     public int itemPrice;
     public int raisePrice;
+    public static int latestPrice;
 
     public GameObject notEnoughMoney;
     public TMP_Text balanceText;
-    public GameObject boughtItem;
+    public GameObject moneyDrawn;
 
     public AudioSource buysound;
+
     void Start()
     {
         Player = FindObjectOfType<Player>();
         buysound = FindObjectOfType<AudioSource>();
+        Player.money = 100000;
     }
 
 
@@ -35,16 +38,19 @@ public class Shop : MonoBehaviour
     public virtual void buyItem() //köp item
     {
         if(Player.money >=  itemPrice) //om spelarens pengar är mer än kostnaden på objektet
-        { 
-            Player.money -= itemPrice; //subtrahera spelarens pengar med kostnaden på objektet
+        {
+            Player.money -= itemPrice ; //subtrahera spelarens pengar med kostnaden på objektet
+            latestPrice = itemPrice;
             itemPrice += raisePrice; //addera raiseprice till itemprice, så att det blir dyrare och dyrare. 
+            buysound.Play();
 
+
+            Instantiate(moneyDrawn, new Vector3(0, -2.34f, 0), Quaternion.identity);
         }
         else
         {
             Instantiate(notEnoughMoney, transform.position, Quaternion.identity); //annars spawna texten som visar att man har för lite pengar. 
-         RectTransform newItem =   Instantiate(boughtItem, new Vector3(0, 0, 0), Quaternion.identity).GetComponent<RectTransform>();
-            newItem.position = new Vector3(0, 0, 0);
+            
         }
     }
 

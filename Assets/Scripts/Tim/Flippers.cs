@@ -22,11 +22,10 @@ public class Flippers : Shop
     }
     public override void buyItem()
     {
-        Player.money -= itemPrice;
-        itemPrice += raisePrice;
+        base.buyItem();
+        
         Player.speed += 0.2f;
         Player.flippersLevel += 1;
-        buysound.Play();
     }
     // Update is called once per frame
     void Update()
