@@ -10,14 +10,7 @@ using UnityEngine.Rendering;
 
 
 public class Player : MonoBehaviour
-{
-    private float horizontal;
-    private float vertical;
-    private bool isFacingRight = true;
-
-    [SerializeField] PostProcessProfile profile;
-
-    
+{    
     float maxspeed = 7;
     public Rigidbody2D rb;
 
@@ -38,12 +31,11 @@ public class Player : MonoBehaviour
     //_____________________________________________________
 
 
-    public bool dead = false;
-
+    public bool dead = false; //Kollar om spelaren "håller på" att dö -- Tim
     public static float speed = 1;
-    public static int money;
+    public static int money;  // pengar ofc -- Tim
 
-    //TUBE
+    //TUBE || Variabler för andningssystemet -- Tim
     public static bool tubeEquipped;
     public static bool inWater;
     public static float maxTube = 15;
@@ -54,35 +46,35 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteR;
     private Sprite[] sprites;
 
+    //Poängrelaterat -- Tim
     public bool deathscreenspawned = false;
     PlasticScore PlasticScore;
     JewleryScore JewleryScore;  
     public GameObject deathscreenprefab;
     float deathTimer = 99999999;
 
-
+    //Canvasrelaterat -- Tim
     public TMP_Text balanceText;
     public TMP_Text stats;
     public Canvas pauseMenu;
     bool pauseMenuActive;
 
+    //Upgradesrelaterat -- Tim
     public static int tubeLevel = 0;
     public static int flippersLevel = 0;
     public static int gogglesLevel = 0;
     public static int refillLevel = 0;
     public static int flashlightLevel = 0;
 
-
+    //Pinacolada
     PinaColada PinaColada;
     float drunkTime = 25;
-
-    PostProcessVolume volym;
 
     // Start is called before the first frame update
     void Start()
     {
-
         
+        //Hittar referenser för allt som behövs -- Tim
         PinaColada = FindObjectOfType<PinaColada>();
         spriteR = gameObject.GetComponent<SpriteRenderer>();
 
@@ -97,16 +89,13 @@ public class Player : MonoBehaviour
         dead = false;
 
         spriteR.flipX = true;
-
-
-        
-
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        //Om man har köpt pinacolada så är movements invertade och en timer "drunkTime" börjar räkna ner tills den tar slut -- Tim
         if(PinaColada.pinaBought)
         {
             drunkTime -= Time.deltaTime;
@@ -128,14 +117,14 @@ public class Player : MonoBehaviour
                 rb.AddForce(new Vector2(0f, swimDown *= speed));
             }
         }
-        if(drunkTime <= 0)
-        {
+        if(drunkTime <= 0) //om drunkTime är 0 så är man inte drunk längre -- Tim
+        { 
             PinaColada.pinaBought = false;
         }
 
-        balanceText.text = "" + money;
-        stats.text = "Tube Level: " + tubeLevel + "            " + "TubeRefill Level: " + refillLevel + "          " + "Flippers Level: " + flippersLevel + "         " + "Goggles Level: " + gogglesLevel;
-        if (!PinaColada.pinaBought)
+        balanceText.text = "" + money; //Så man kan se ens pengar på skärmen -- Tim
+        stats.text = "Tube Level: " + tubeLevel + "            " + "TubeRefill Level: " + refillLevel + "          " + "Flippers Level: " + flippersLevel + "         " + "Goggles Level: " + gogglesLevel + "         " + "Flashlight Level: " + flashlightLevel; // Så man kan se statistics på skärmen om man klickar escape
+        if (!PinaColada.pinaBought) //om man inte har köpt pinacolada, movements som vanligt.  -- Tim
         {
             if (Input.GetKeyDown(KeyCode.D))
             {
@@ -203,63 +192,54 @@ public class Player : MonoBehaviour
     
        deathTimer -= 1 * Time.deltaTime;
 
-        if (deathTimer <= 0)
+        if (deathTimer <= 0) //om deathtimer (deathscreenen) är slut, byt scen -- Tim
         {
             SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         }
-        if(tubeRemaining <= 0)
+        if(tubeRemaining <= 0) //om man inte har luft kvar i tuberna -- Tim
         {
-            PlasticScore.score = 0;
-            JewleryScore.score = 0;
-            if(!deathscreenspawned)
+            PlasticScore.score = 0; //reseta score -- Tim
+            JewleryScore.score = 0; //reseta score -- Tim
+            if (!deathscreenspawned) //Om deathscreenen inte har spawnat än (förhindrar att det spawnas flera deathscreens) -- Tim
             {
-                Instantiate(deathscreenprefab, new Vector3(0, 0, 0), Quaternion.identity);
-                deathscreenspawned = true;
-                deathTimer = 5;
+                Instantiate(deathscreenprefab, new Vector3(0, 0, 0), Quaternion.identity); //skapa en deathscreen  -- Tim
+                deathscreenspawned = true; //Markera att den är spawnad, så den inte kan spawnas igen  -- Tim
+                deathTimer = 5; //Deathscreenen varar i 5 sekunder  -- Tim
             }
             
         }
 
-        if(Input.GetKeyDown(KeyCode.O))
-        {
-            inWater = true;
-        }
-        if(Input.GetKeyUp(KeyCode.O))
-        {
-            inWater = false;
-        }
 
-        print("filled tube is" + maxTube);
-        print("speed is " + speed);
-
-
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape)) //Om man klickar ESC  -- Tim
         {
-            if (!pauseMenuActive)
+            if (!pauseMenuActive) //om pausemenyn inte redan är aktiv  -- Tim
             {
                 
-                pauseMenu.gameObject.SetActive(true);
-                Time.timeScale = 0;
-                pauseMenuActive = true;
-                
+                pauseMenu.gameObject.SetActive(true); //Sätt på pausmenyn  -- Tim
+                Time.timeScale = 0; //Realtid sätts till 0, inget kan hända i spelet  -- Tim
+                pauseMenuActive = true; //Markera att den är aktiv  -- Tim
+
             }
-            else if (pauseMenuActive == true)
+            else if (pauseMenuActive == true) //Om den redan är aktiv  -- Tim
             {
-                pauseMenu.gameObject.SetActive(false);
-                Time.timeScale = 1;
+                pauseMenu.gameObject.SetActive(false); //Sätt den inaktiv  -- Tim
+                Time.timeScale = 1; //Fortsätt tiden som vanligt  -- Tim 
                 pauseMenuActive = false;
             }
         }
     }
 
-    public void ContinueGame()
+    //KNAPPAR TILL PAUSMENYN -- Tim
+    public void ContinueGame() 
     {
+        print("klickade continue");
         pauseMenu.gameObject.SetActive(false);
         Time.timeScale = 1;
     }
 
     public void QuitGame()
     {
+        print("klickade exit");
         pauseMenu.gameObject.SetActive(false);
         SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
     }

@@ -9,6 +9,10 @@ public class InWaterCheck : MonoBehaviour
     //Niljas fixade gravity
     public Rigidbody2D rb;
 
+    //HELA SCRIPTET ÄR GJORT AV TIM S SU21B
+    //HELA SCRIPTET ÄR GJORT AV TIM S SU21B
+    //HELA SCRIPTET ÄR GJORT AV TIM S SU21B
+
     private int plasticValue = 25; //värde på plast
     private int JeweleryValue = 200; //värde på jewelery
 
@@ -84,7 +88,7 @@ public class InWaterCheck : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision) //medans spelaren är på detta
     {
         
-        if (collision.gameObject.tag == "water")
+        if (collision.gameObject.tag == "water") //När spelaren kolliderar med vatten
         {
 
             Player.inWater = true;
@@ -100,11 +104,11 @@ public class InWaterCheck : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)  //När spelare LÄMNAR ett område
     {
-        if(collision.gameObject.tag == "enterboat")
+        if(collision.gameObject.tag == "enterboat") //när spelaren kolliderar med området där man kan klättra upp för stegen till båten.
         {
-            canExit = false;
+            canExit = false; 
             ladderNormal.gameObject.SetActive(true);
             ladderWhite.gameObject.SetActive(false) ;
             clickE.gameObject.SetActive(false);

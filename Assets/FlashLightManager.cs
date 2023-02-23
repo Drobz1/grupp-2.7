@@ -16,9 +16,9 @@ public class FlashLightManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Player.flashlightLevel >= 1)
+        if(Player.flashlightLevel >= 1) //Om man har köpt flashlight en gång  -- Tim
         {
-            flashLight.gameObject.SetActive(true);
+            flashLight.gameObject.SetActive(true); //Sätt den aktiv  -- Tim
         }
     }
 }

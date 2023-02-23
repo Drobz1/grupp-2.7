@@ -8,9 +8,13 @@ using System;
 
 public class Shop : MonoBehaviour
 {
+    //HELA DETTA SCRIPT ÄR GJORT AV TIM S SU21B
+    //HELA DETTA SCRIPT ÄR GJORT AV TIM S SU21B
+    //HELA DETTA SCRIPT ÄR GJORT AV TIM S SU21B
     
+    //Detta script är uppbyggt på arv, det finns upgrades som ärver från detta script. Klicka på "9 references" några rader ovan för att se vad som ärver från detta.
 
-
+    //Variabler för affären
     Player Player;
     public int itemPrice;
     public int raisePrice;
@@ -39,9 +43,9 @@ public class Shop : MonoBehaviour
         if(Player.money >=  itemPrice) //om spelarens pengar är mer än kostnaden på objektet
         {
             Player.money -= itemPrice ; //subtrahera spelarens pengar med kostnaden på objektet
-            latestPrice = itemPrice;
+            latestPrice = itemPrice; //bestäm ett latestprice (till "MoneyDrawn" scriptet)
             itemPrice += raisePrice; //addera raiseprice till itemprice, så att det blir dyrare och dyrare. 
-            buysound.Play();
+            buysound.Play(); //Spela "köp" ljudet
 
 
             Instantiate(moneyDrawn, new Vector3(0, -2.34f, 0), Quaternion.identity);
