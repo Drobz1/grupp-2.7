@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class ItemSpawnManager : MonoBehaviour
 {
+
+    //DETTA SCRIPT ÄR GJORT AV TIM S SU21B
+    //DETTA SCRIPT ÄR GJORT AV TIM S SU21B
+    //DETTA SCRIPT ÄR GJORT AV TIM S SU21B
+
     //HITTA ALLA PREFABS
     public GameObject trashPrefab;
     public GameObject canPrefab;

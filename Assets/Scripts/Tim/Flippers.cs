@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Flippers : Shop
 {
+
+    //Detta script är gjort av Tim S SU21B och ärver från "Shop". Detta script gör att man kan köpa flippers
     public GameObject NotEnoughMoney;
     Player Player;
 

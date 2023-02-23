@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Goggles : Shop
 {
-
+    //Detta script är gjort av Tim S SU21B och ärver från "Shop". Detta script gör att man kan köpa Goggles
     public Text priceTag;
     public static int goggleLevel = 0;
 
