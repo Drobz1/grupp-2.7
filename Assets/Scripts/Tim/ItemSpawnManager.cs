@@ -14,10 +14,12 @@ public class ItemSpawnManager : MonoBehaviour
     public GameObject redNecklacePrefab;
     public GameObject greenNecklacePrefab;
 
+    public int totalItemsOnMap;
 
     //INTS SOM ANVÄNDS TILL SENARE
     public int randomNumber;
     public int randomNumber2;
+    
 
     Vector3 trashPosition()  //nämner ut ett antal koordinater, emellan de koordinaterna blir en random punkt utvald.
     {
@@ -49,19 +51,20 @@ public class ItemSpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        totalItemsOnMap = 0;
         spawnItems();
     }
     void spawnItems() //funktion som spawnar items
     {
         randomNumber = Random.Range(7, 13); //ge randomnumber ett random värde 
-        randomNumber2 = Random.Range(2, 4);  //ge randomnumber ett random värde 
+        randomNumber2 = Random.Range(2, 4);  //ge randomnumber ett random värde
+       
         for (int i = 0; i < randomNumber; i++) //för varje randomnumber
         {
             Instantiate(trashPrefab, trashPosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
             Instantiate(canPrefab, trashPosition(), Quaternion.identity);  //spawna prefab på random position med rätt rotation
             Instantiate(plasticPrefab, trashPosition(), Quaternion.identity);  //spawna prefab på random position med rätt rotation
-
+            totalItemsOnMap += 3; 
         }
 
         for (int i = 0; i < randomNumber2; i++) // för varje randomnumber
@@ -69,20 +72,22 @@ public class ItemSpawnManager : MonoBehaviour
             Instantiate(ringPrefab, jeweleryPosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
             Instantiate(redNecklacePrefab, jeweleryPosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
             Instantiate(greenNecklacePrefab, jeweleryPosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
-
+            totalItemsOnMap += 3;
         }
         for (int i = 0; i < 350; i++)
         {
-            Instantiate(ringPrefab, treasurePosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
+           /* Instantiate(ringPrefab, treasurePosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
             Instantiate(redNecklacePrefab, treasurePosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
             Instantiate(greenNecklacePrefab, treasurePosition(), Quaternion.identity); //spawna prefab på random position med rätt rotation
-        }
-
-
+       */
+            }
     }
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKey(KeyCode.U))
+            {
+            print(totalItemsOnMap);
+        }
     }
 }

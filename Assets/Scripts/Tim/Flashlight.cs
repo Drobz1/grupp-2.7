@@ -19,6 +19,10 @@ public class Flashlight : Shop
         raisePrice = 100;
         Player = FindObjectOfType<Player>();
         itemPrice = Player.flashlightLevel * 500 + 100;
+        if(Player.flashlightLevel >= 1)
+        {
+            gameObject.SetActive(false);
+        }
     }
     public override void buyItem()
     {

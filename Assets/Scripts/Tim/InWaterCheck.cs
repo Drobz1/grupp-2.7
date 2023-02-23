@@ -51,11 +51,14 @@ public class InWaterCheck : MonoBehaviour
     {
         if (collision.gameObject.tag == "enterboat")  //om den kolliderar med något som har taget enterboat
         {
-            canExit = true;
-            ladderNormal.gameObject.SetActive(false);
-            ladderWhite.gameObject.SetActive(true);
-            Enterboat.gameObject.SetActive(true);
-            clickE.gameObject.SetActive(true);
+            if (Player.deathscreenspawned == false) //om man inte håller på att dö
+            {
+                canExit = true;
+                ladderNormal.gameObject.SetActive(false);
+                ladderWhite.gameObject.SetActive(true);
+                Enterboat.gameObject.SetActive(true);
+                clickE.gameObject.SetActive(true);
+            }
         }
 
         if (collision.gameObject.tag == "båt") //om spelaren (objektet som scriptet sitter på) kolliderar med båt
